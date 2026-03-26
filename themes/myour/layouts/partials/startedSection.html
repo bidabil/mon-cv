@@ -1,0 +1,49 @@
+{{ with .Site.Data.home.started }}
+{{ if .enable }}
+
+{{ "<!-- Section Started -->" | safeHTML }}
+<div class="section started" id="section-started">
+  <div class="centrize full-width">
+    <div class="vertical-center">
+      {{ "<!-- title -->" | safeHTML }}
+      <h1 class="h-title">
+        {{ .title | safeHTML }}
+      </h1>
+
+      {{ "<!-- content started -->" | safeHTML }}
+      <div class="started-content">
+
+        {{ "<!-- subtitle -->" | safeHTML }}
+        <div class="h-subtitles">
+          <div class="h-subtitle typing-subtitle">
+            {{ range .typed }}
+            <p>{{ . }}</p>
+            {{ end }}
+          </div>
+          <span class="typed-subtitle"></span>
+        </div>
+
+        {{ "<!-- text -->" | safeHTML }}
+        <div class="h-text">
+          {{ .text | safeHTML }}
+        </div>
+
+        {{ "<!-- button -->" | safeHTML }}
+        <a href="{{ .button.link }}" class="btn">
+          <span class="animated-button"><span>{{ .button.text }}</span></span>
+          <i class="icon fas fa-chevron-right"></i>
+        </a>
+
+        {{ "<!-- mosue button -->" | safeHTML }}
+        <a href="#" class="btn mouse-btn" style="display: none;">
+          <i class="icon fas fa-chevron-down"></i>
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{{ end }}
+{{ end }}

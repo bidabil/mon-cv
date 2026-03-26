@@ -1,0 +1,208 @@
+{{ define "main" }}
+{{ $portfolio := .Site.Params.portfolio }}
+
+{{ "<!-- Works -->" | safeHTML }}
+<div class="section works" id="section-portfolio">
+  <div class="content">
+
+    {{ "<!-- title -->" | safeHTML }}
+    <div class="titles">
+      <div class="title">{{ .Title }}</div>
+      <div class="subtitle">{{ .Params.text | safeHTML }}</div>
+    </div>
+
+    {{ "<!-- filter -->" | safeHTML }}
+    <div class="filter-menu">
+      <div class="filters">
+        <div class="btn-group">
+          <label data-text="{{ i18n "all" }}" class="glitch-effect">
+            <input type="radio" name="fl_radio" value=".box-col" />
+            {{ i18n "all" }}
+          </label>
+        </div>
+        {{ range $portfolio.filters }}
+        <div class="btn-group">
+          <label data-text="Video">
+            <input type="radio" name="fl_radio" value=".{{ .slug }}" />
+            {{ .name }}
+          </label>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+
+    {{ "<!-- portfolio items -->" | safeHTML }}
+    <div class="box-items">
+      {{ range .Data.Pages }}
+
+      {{ if eq .Params.type "gallery" }}
+      <div class="box-col {{ .Params.category_slug }}">
+        <div class="box-item">
+          <div class="image">
+            <a href="#gallery-{{ .File.UniqueID }}" class="has-popup-gallery">
+              <img src="{{ .Params.image | absURL }}" alt="{{ .Title }}" />
+              <span class="info">
+                <span class="centrize full-width">
+                  <span class="vertical-center">
+                    <i class="icon fas fa-images"></i>
+                  </span>
+                </span>
+              </span>
+            </a>
+            <div id="gallery-{{ .File.UniqueID }}" class="mfp-hide">
+              {{ range .Params.gallery }}
+              <a href="{{ . | absURL }}"></a>
+              {{ end }}
+            </div>
+          </div>
+          <div class="desc">
+            <div class="category">{{ .Params.category }}</div>
+            <a href="#gallery-{{ .File.UniqueID }}" class="name has-popup-gallery">{{ .Title }}</a>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+
+      {{ if eq .Params.type "video" }}
+      <div class="box-col {{ .Params.category_slug }}">
+        <div class="box-item">
+          <div class="image">
+            <a href="{{ .Params.video }}" class="has-popup-video">
+              <img src="{{ .Params.image | absURL }}" alt="{{ .Title }}" />
+              <span class="info">
+                <span class="centrize full-width">
+                  <span class="vertical-center">
+                    <i class="icon fas fa-video"></i>
+                  </span>
+                </span>
+              </span>
+            </a>
+          </div>
+          <div class="desc">
+            <div class="category">{{ .Params.category }}</div>
+            <a href="{{ .Params.video }}" class="name has-popup-video">{{ .Title }}</a>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+
+      {{ if eq .Params.type "image" }}
+      <div class="box-col {{ .Params.category_slug }}">
+        <div class="box-item">
+          <div class="image">
+            <a href="{{ .Params.image | absURL }}" class="has-popup-image">
+              <img src="{{ .Params.image | absURL }}" alt="{{ .Title }}" />
+              <span class="info">
+                <span class="centrize full-width">
+                  <span class="vertical-center">
+                    <i class="icon fas fa-image"></i>
+                  </span>
+                </span>
+              </span>
+            </a>
+          </div>
+          <div class="desc">
+            <div class="category">{{ .Params.category }}</div>
+            <a href="{{ .Params.image | absURL }}" class="name has-popup-image">{{ .Title }}</a>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+
+      {{ if eq .Params.type "music" }}
+      <div class="box-col {{ .Params.category_slug }}">
+        <div class="box-item">
+          <div class="image">
+            <a href="{{ .Params.music }}" class="has-popup-music">
+              <img src="{{ .Params.image | absURL }}" alt="{{ .Title }}" />
+              <span class="info">
+                <span class="centrize full-width">
+                  <span class="vertical-center">
+                    <i class="icon fas fa-music"></i>
+                  </span>
+                </span>
+              </span>
+            </a>
+          </div>
+          <div class="desc">
+            <div class="category">{{ .Params.category }}</div>
+            <a href="{{ .Params.music }}" class="name has-popup-music">{{ .Title }}</a>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+
+      {{ if eq .Params.type "link" }}
+      <div class="box-col {{ .Params.category_slug }}">
+        <div class="box-item">
+          <div class="image">
+            <a href="{{ .Params.link }}" class="has-popup-link" target="_blank">
+              <img src="{{ .Params.image | absURL }}" alt="{{ .Title }}" />
+              <span class="info">
+                <span class="centrize full-width">
+                  <span class="vertical-center">
+                    <i class="icon fas fa-link"></i>
+                  </span>
+                </span>
+              </span>
+            </a>
+          </div>
+          <div class="desc">
+            <div class="category">{{ .Params.category }}</div>
+            <a href="{{ .Params.link }}" class="name has-popup-link" target="_blank">{{ .Title }}</a>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+
+      {{ if eq .Params.type "content" }}
+      <div class="box-col {{ .Params.category_slug }}">
+        <div class="box-item">
+          <div class="image">
+            <a href="#popup-{{ .File.UniqueID }}" class="has-popup-media">
+              <img src="{{ .Params.image | absURL }}" alt="{{ .Title }}" />
+              <span class="info">
+                <span class="centrize full-width">
+                  <span class="vertical-center">
+                    <i class="icon fas fa-plus"></i>
+                  </span>
+                </span>
+              </span>
+            </a>
+          </div>
+          <div class="desc">
+            <div class="category">{{ .Params.category }}</div>
+            <a href="#popup-{{ .File.UniqueID }}" class="name has-popup-media">{{ .Title }}</a>
+          </div>
+          <div id="popup-{{ .File.UniqueID }}" class="popup-box mfp-fade mfp-hide">
+            <div class="content">
+              <div class="image">
+                <img src="{{ .Params.image | absURL }}" alt="{{ .Title }}" />
+              </div>
+              <div class="desc">
+                <div class="category">{{ .Params.category }}</div>
+                <h4>{{ .Title }}</h4>
+                <div class="single-post-text">
+                  {{ .Content }}
+                </div>
+                {{ if .Params.button_url }}
+                <a href="{{ .Params.button_url }}" class="btn" target="_blank">
+                  <span class="animated-button"><span>{{ i18n "viewProject" }}</span></span>
+                  <i class="icon fas fa-chevron-right"></i>
+                </a>
+                {{ end }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+
+      {{ end }}
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+
+{{ end }}

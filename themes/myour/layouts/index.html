@@ -1,0 +1,39 @@
+{{ define "main" }}
+
+{{ $page := . }}
+
+{{ if eq $page.Params.bg_type "image-1" }}
+  {{ partial "heroImage1Section.html" . }}
+{{ else if eq $page.Params.bg_type "image-2" }}
+  {{ partial "heroImage2Section.html" . }}
+{{ else if eq $page.Params.bg_type "image-3" }}
+  {{ partial "heroImage3Section.html" . }}
+{{ else if eq $page.Params.bg_type "slider" }}
+  {{ partial "heroSliderSection.html" . }}
+{{ else if eq $page.Params.bg_type "video" }}
+  {{ partial "heroVideoSection.html" . }}
+{{ else }}
+
+{{ end }}
+
+{{ partial "startedSection.html" . }}
+
+{{ partial "aboutSection.html" . }}
+
+{{ partial "serviceSection.html" . }}
+
+{{ partial "pricingSection.html" . }}
+
+{{ partial "resumeSection.html" . }}
+
+{{ partial "skillSection.html" . }}
+
+{{ partial "testimonialSection.html" . }}
+
+{{ partial "clientsSection.html" . }}
+
+{{ partial "portfolioSection.html" . }}
+
+{{ partial "contactSection.html" . }}
+
+{{ end }}

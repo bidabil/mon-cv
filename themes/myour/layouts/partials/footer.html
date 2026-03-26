@@ -1,0 +1,10 @@
+{{ "<!-- Footer -->" | safeHTML }}
+<footer class="footer">
+  <div class="socials">
+    {{ range .Site.Params.social }}
+    <a target="_blank" href="{{ .url }}" title="{{ .title }}">
+      <i class="icon {{ .icon }}"></i>
+    </a>
+    {{ end }}
+  </div>
+</footer>

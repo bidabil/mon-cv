@@ -1,0 +1,252 @@
+# Sections content configuration file
+##
+### use navigation.yml file to re-order, delete or add section of each card
+### here you can find all content in all pre-build sections
+
+### Hero Image 1 - 3 [ heroImage1Section, heroImage2Section, heroImage3Section ]
+hero_image1:
+  enable: true
+  image: "images/man.jpg"
+
+hero_image2:
+  enable: true
+  image: "images/man2.jpg"
+
+hero_image3:
+  enable: true
+  image: "images/girl3.jpg"
+
+### Hero Video
+hero_video:
+  enable: true
+  video: "https://youtu.be/S4L8T2kFFck"
+
+### Hero Slider
+hero_slider:
+  enable: true
+  images:
+    - "images/girl.jpg"
+    - "images/girl3.jpg"
+    - "images/girl2.jpg"
+
+### Started [ startedSection ]
+started:
+  enable: true
+  title: "Billel <br />Attafi"
+  typed:
+    - "Senior .NET Engineer"
+    - "Architecte Backend & Cloud"
+    - "Expert Clean Architecture"
+    - "Consultant Freelance DevSecOps"
+  text: "Ingénieur logiciel senior basé à Marseille, avec 10+ ans d'expérience dans la conception de systèmes backend haute performance, d'architectures distribuées et de solutions géospatiales. Expert .NET, Clean Architecture et DevSecOps."
+  button:
+    text: "Me contacter"
+    link: "#section-contacts"
+
+### About [ aboutSection ]
+about:
+  enable: true
+  title: "À propos"
+  subtitle: "Mon profil"
+  text: "<p>Ingénieur logiciel senior avec 10+ ans d'expérience dans la conception de systèmes backend haute performance, d'architectures distribuées et de solutions géospatiales. Expert en .NET, PostgreSQL/PostGIS et Clean Architecture, reconnu pour concevoir des systèmes scalables et fiables en production.</p><p>Expérimenté dans la mise en place de pipelines CI/CD sécurisés intégrant les pratiques DevSecOps modernes (SBOM, signature d'image, supply chain security, SAST). Habitué à diriger des équipes techniques, à prendre des décisions d'architecture et à livrer des systèmes critiques en production.</p>"
+  list:
+    - label: "Résidence"
+      value: "Marseille, France"
+
+    - label: "Freelance"
+      value: "Disponible"
+
+    - label: "Téléphone"
+      value: "+33 7 48 24 41 37"
+
+    - label: "E-mail"
+      value: "attafi.billel@gmail.com"
+
+    - label: "LinkedIn"
+      value: "linkedin.com/in/billelattafi"
+
+### Services [ serviceSection ]
+services:
+  enable: true
+  title: "Services"
+  subtitle: "Ce que je fais"
+  items:
+    - icon: "fas fa-layer-group"
+      name: "Architecture <br />Backend"
+      text: "Conception de systèmes distribués scalables en Clean Architecture, avec patterns avancés (CQRS, Mediator, Event-driven)."
+
+    - icon: "fas fa-shield-alt"
+      name: "DevSecOps <br />& CI/CD"
+      text: "Pipelines CI/CD sécurisés avec SBOM, SAST, signature d'image Cosign, SLSA et quality gates automatisés."
+
+    - icon: "fas fa-map-marked-alt"
+      name: "Solutions <br />Géospatiales"
+      text: "APIs géospatiales avancées, geocoding, routage et optimisation logistique avec PostGIS et NetTopologySuite."
+
+    - icon: "fas fa-database"
+      name: "Performance <br />& Data"
+      text: "Optimisation PostgreSQL (indexation, partitionnement, JSONB), traitement de données IoT et batchs haute performance."
+
+    - icon: "fas fa-project-diagram"
+      name: "Microservices <br />& Event-Driven"
+      text: "Architecture microservices, messaging asynchrone avec RabbitMQ/Kafka, Minimal APIs haute performance."
+
+    - icon: "fas fa-users"
+      name: "Leadership <br />Technique"
+      text: "Mentorat d'équipes (jusqu'à 8 devs), code review, décisions d'architecture et accompagnement Agile/Scrum."
+
+### Pricing [ pricingSection ]
+pricing:
+  enable: false
+
+### Resume [ resumeSection ]
+resume:
+  enable: true
+  experience:
+    title: "Expérience"
+    subtitle: "Parcours professionnel"
+    items:
+      - year: "2025 — Présent"
+        name: "Tech Lead – Senior Backend .NET <br />Davidson (Mission APRR — Flux Libre) | Dijon"
+        text: "Conception d'une architecture backend scalable (Clean Architecture, Mediator, RabbitMQ). Modélisation PostgreSQL pour flux de péage à fort trafic. Pipelines CI/CD Azure DevOps et pratiques DevSecOps. Mentorat technique en contexte Agile."
+
+      - year: "2024 — 2025"
+        name: "Senior Backend .NET Developer <br />NOOEH (Mission Colis Privé — CMA CGM) | Marseille"
+        text: "APIs géospatiales avancées (NetTopologySuite + PostGIS). Optimisation des batchs de calcul de distances : −40% de temps d'exécution. Solution de gestion des contours postaux et moteur de routage logistique. Encadrement équipe (5 devs)."
+
+      - year: "2023 — 2024"
+        name: "Software Development Engineer <br />My Kiwi (Mission ArcelorMittal) | Marseille"
+        text: "Modernisation plateforme industrielle critique : migration Visual Basic 6 → .NET Core & Angular (+32% de performance). Intégration IoT pour analyse de données industrielles en temps réel."
+
+      - year: "2023"
+        name: "Responsable Pôle Développement C# <br />IT Systèmes | Paris"
+        text: "Management d'une équipe de 8 développeurs .NET (+25% de productivité). Conception d'un plugin Microsoft Teams en Clean Architecture intégrant SharePoint et Azure AD via Microsoft Graph API."
+
+      - year: "2015 — 2022"
+        name: "Directeur Opérationnel / Chef de Projet / Full Stack <br />Hostaplast | Alger, Algérie"
+        text: "Optimisation logistique nationale (4 000 points de vente) : −60% de coûts opérationnels. Développement d'une API géospatiale complète remplaçant Google Maps : −100% de coûts de licence. ERP complet .NET + SQL Server."
+
+  education:
+    title: "Formation"
+    subtitle: "Parcours académique"
+    items:
+      - year: "2015 — 2017"
+        name: "Master en Architecture Parallèle et Calcul Intensif <br />USTHB — Alger"
+        text: "Spécialisation en systèmes distribués, calcul haute performance et architectures parallèles."
+
+      - year: "2010 — 2015"
+        name: "Licence en Ingénierie des Systèmes d'Information et des Logiciels <br />USTHB — Alger"
+        text: "Formation en génie logiciel, systèmes d'information et développement applicatif."
+
+### Skills [ skillSection ]
+skills:
+  enable: true
+  columns:
+    - type: "default"
+      title: "Backend & Architecture"
+      subtitle: "Compétences cœur"
+      slug: "backend"
+      items:
+        - label: "C# / .NET Core"
+          value: "98"
+          text: "Expert .NET depuis 10+ ans. Minimal API, Clean Architecture, Design Patterns avancés."
+
+        - label: "Clean Architecture / SOLID"
+          value: "95"
+          text: "Conception de systèmes maintenables et testables à grande échelle."
+
+        - label: "PostgreSQL / PostGIS"
+          value: "90"
+          text: "Modélisation avancée, indexation, partitionnement, JSONB et requêtes géospatiales."
+
+        - label: "Event-Driven (RabbitMQ / Kafka)"
+          value: "85"
+          text: "Architecture asynchrone, publishers/consumers, scalabilité horizontale."
+
+    - type: "dotted"
+      title: "DevSecOps & CI/CD"
+      subtitle: "Sécurité & livraison"
+      slug: "devsecops"
+      items:
+        - label: "GitHub Actions / Azure DevOps"
+          value: "90"
+          text: "Pipelines CI/CD complets avec quality gates, tests automatisés et déploiement continu."
+
+        - label: "Docker & Multi-arch builds"
+          value: "88"
+          text: "Containerisation, builds multi-architecture (amd64/arm64), optimisation des images."
+
+        - label: "SAST / SBOM / Cosign"
+          value: "85"
+          text: "Sécurité supply chain : Semgrep, CodeQL, SLSA, signature d'image keyless."
+
+        - label: "GitLab CI"
+          value: "80"
+          text: "Pipelines GitLab, runners et intégration DevSecOps."
+
+    - type: "circles"
+      title: "Autres compétences"
+      subtitle: "Écosystème technique"
+      slug: "autres"
+      items:
+        - label: "NetTopologySuite / GIS"
+          value: "90"
+          text: "Géospatial avancé, geocoding, routage et optimisation de tournées."
+
+        - label: "Microservices"
+          value: "88"
+          text: "Architecture distribuée, communication inter-services, résilience."
+
+        - label: "Azure AD / Graph API"
+          value: "80"
+          text: "Intégration Microsoft 365, Teams SDK, SharePoint."
+
+        - label: "WPF / MVVM"
+          value: "85"
+          text: "Applications desktop .NET, data binding avancé, supervision temps réel."
+
+        - label: "Python"
+          value: "70"
+          text: "Scripting, automatisation, tooling DevSecOps."
+
+        - label: "Leadership Tech"
+          value: "92"
+          text: "Management jusqu'à 8 devs, mentorat, code review et décisions d'architecture."
+
+### Testimonials [ testimonialSection ]
+testimonials:
+  enable: false
+
+### Clients [ clientSection ]
+clients:
+  enable: false
+
+### Portfolio [ portfolioSection ]
+portfolio:
+  enable: true
+  title: "Portfolio"
+  subtitle: "Projets clés"
+
+### Contact [ contactSection ]
+contacts:
+  enable: true
+  title: "Contact"
+  subtitle: "Travaillons ensemble"
+  name: "Billel Attafi"
+  subname: "Senior .NET Engineer & Consultant Freelance"
+  signature: "Billel Attafi"
+  list:
+    - label: "Résidence:"
+      value: "Marseille, France"
+
+    - label: "Freelance:"
+      value: "Disponible"
+
+    - label: "Téléphone:"
+      value: "+33 7 48 24 41 37"
+
+    - label: "E-mail:"
+      value: "attafi.billel@gmail.com"
+
+    - label: "LinkedIn:"
+      value: "linkedin.com/in/billelattafi"

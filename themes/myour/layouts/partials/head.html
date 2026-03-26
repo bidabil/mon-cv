@@ -1,0 +1,51 @@
+<head>
+  <title>{{ .Title }}</title>
+
+  {{ "<!-- Meta -->" | safeHTML }}
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="author" content="bslthemes" />
+
+  {{ "<!-- Google Fonts -->" | safeHTML }}
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Mr+Dafoe&display=swap" rel="stylesheet">
+
+  {{ "<!-- Main Stylesheets -->" | safeHTML }}
+  {{ $style := resources.Get "scss/style.scss" | css.Sass | minify }}
+  <link rel="stylesheet" href="{{ $style.Permalink }}" />
+
+  {{ "<!-- Plugins Stylesheets -->" | safeHTML }}
+  <link rel="stylesheet" href="{{ "plugins/magnific-popup/magnific-popup.css" | absURL }}" />
+  <link rel="stylesheet" href="{{ "plugins/animate/animate.css" | absURL }}" />
+  <link rel="stylesheet" href="{{ "plugins/jarallax/jarallax.css" | absURL }}" />
+  <link rel="stylesheet" href="{{ "plugins/swiper/swiper.min.css" | absURL }}" />
+  <link rel="stylesheet" href="{{ "plugins/owl-carousel/owl.carousel.css" | absURL }}" />
+  <link rel="stylesheet" href="{{ "plugins/font-awesome/css/font-awesome.css" | absURL }}" />
+
+  {{ with .Site.Params.skinColor }}
+  {{ "<!-- Template Colors -->" | safeHTML }}
+  <link rel="stylesheet" href="{{ "plugins/template-colors/" | absURL }}{{ . }}.css" />
+  {{ end }}
+
+  {{ "<!-- Favicon -->" | safeHTML }}
+  <link rel="shortcut icon" href="{{ "images/favicon/favicon.ico" | absURL }}" type="image/x-icon" />
+  <link rel="icon" href="{{ "images/favicon/favicon.ico" | absURL }}" type="image/x-icon" />
+
+  {{ with site.Params.googleAnalytics }}
+  {{ "<!-- Google Analytics -->" | safeHTML }}
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', '{{ . }}');
+  </script>
+  {{ end }}
+
+  {{ range .AlternativeOutputFormats -}}
+  {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+  {{ end -}}
+</head>

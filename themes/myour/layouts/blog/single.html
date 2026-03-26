@@ -1,0 +1,121 @@
+{{ define "main" }}
+{{ $dateFormat := .Site.Params.dateFormat }}
+
+<div class="background-bg background-bg-inner">
+  <div class="background-filter">
+    <div class="background-img"></div>
+  </div>
+</div>
+
+<div class="section started">
+	<div class="centrize full-width">
+		<div class="vertical-center">
+			<div class="started-content">
+				<h1 class="h-title">{{ .Title }}</h1>
+				<div class="h-subtitles">
+					<div class="h-subtitle">{{ .PublishDate.Format $dateFormat }} / {{ i18n "readingTime" .ReadingTime }}</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="section blog">
+    <div class="content">
+
+        <div class="post">
+            <div class="content-box">
+                <div class="single-post-text">
+                    {{ .Content }}
+                </div>
+
+                <div class="post-text-bottom">
+                    <div class="social-share" data-title="{{ .Title }}" data-url="{{ .Permalink | absURL }}">
+                        <span>{{ i18n "share" }}:</span>
+                        <a class="share-btn share-btn-facebook share-btn-1" title="{{ i18n "share_on" }} Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a class="share-btn share-btn-twitter share-btn-2" title="{{ i18n "share_on" }} Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a class="share-btn share-btn-linkedin share-btn-3" title="{{ i18n "share_on" }} Linkedin">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a class="share-btn share-btn-reddit share-btn-4" title="{{ i18n "share_on" }} Reddit">
+                            <i class="fab fa-reddit"></i>
+                        </a>
+                        <a class="share-btn share-btn-pinterest share-btn-5" title="{{ i18n "share_on" }} Pinterest">
+                            <i class="fab fa-pinterest"></i>
+                        </a>
+                    </div>
+                    {{ if .Params.categories }}
+                    <div class="cat-links">
+                        <span>Posted in</span>
+                        {{ range (.GetTerms "categories") }}
+                        <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>
+                        {{ end }}
+                    </div>
+                    {{ end }}
+
+                    <div class="byline">
+                        {{ i18n "by" }} <span class="author">{{ .Site.Params.authorName }}</span>
+                    </div>
+
+                    {{ if .Params.tags }}
+                    <div class="tags-links">
+                        <span>{{ i18n "tags" }}:</span>
+                        {{ range (.GetTerms "tags") }}
+                        <a href="{{ .Permalink }}" rel="tag">{{ .LinkTitle }}</a>
+                        {{ end }}
+                    </div>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+
+        {{ if or .NextInSection .PrevInSection }}
+				<nav class="navigation post-navigation">
+					<div class="nav-links">
+						{{ if .PrevInSection }}
+						<div class="nav-previous">
+							<a href="{{ .PrevInSection.Permalink }}" title="{{ .PrevInSection.Title }}"><span class="post-nav-next post-nav-text">{{ i18n "prev" }}</span></a>
+						</div>
+						{{ end }}
+						{{ if .NextInSection }}
+						<div class="nav-next">
+							<a href="{{ .NextInSection.Permalink }}" title="{{ .NextInSection.Title }}"><span class="post-nav-prev post-nav-text">{{ i18n "next" }}</span></a>
+						</div>
+						{{ end }}
+					</div>
+				</nav>
+				{{ end }}
+
+        {{ if .Site.Params.disqusComments }}
+				<div class="post-comments">
+					<div class="title">
+						<div class="title_inner">{{ i18n "comments" }}</div>
+					</div>
+					<div class="comments">
+						<div id="disqus_thread"></div>
+						<script>
+							var disqus_config = function () {
+								this.page.url = "{{ .Permalink | absURL }}";  /* Replace PAGE_URL with your page's canonical URL variable */
+								this.page.identifier = "{{ .File.UniqueID }}"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+							};
+							(function() { /* DON'T EDIT BELOW THIS LINE */
+								var d = document, s = d.createElement('script');
+								s.src = 'https://{{ .Site.Params.disqusComments }}.disqus.com/embed.js';
+								s.setAttribute('data-timestamp', +new Date());
+								(d.head || d.body).appendChild(s);
+							})();
+						</script>
+						<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+					</div>
+				</div>
+				{{ end }}
+
+        <div class="clear"></div>
+    </div>
+</div>
+
+{{ end }}

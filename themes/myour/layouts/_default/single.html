@@ -1,0 +1,33 @@
+{{ define "main" }}
+
+<div class="background-bg background-bg-inner">
+  <div class="background-filter">
+    <div class="background-img"></div>
+  </div>
+</div>
+
+<div class="section started">
+	<div class="centrize full-width">
+		<div class="vertical-center">
+			<div class="started-content">
+				<h1 class="h-title">{{ .Title }}</h1>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="section blog">
+    <div class="content">
+        <div class="post">
+            <div class="content-box">
+                <div class="single-post-text">
+                    {{ .Content }}
+                </div>
+            </div>
+        </div>
+
+        <div class="clear"></div>
+    </div>
+</div>
+
+{{ end }}

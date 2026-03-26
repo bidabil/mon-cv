@@ -1,0 +1,108 @@
+[home]
+other = "Home"
+
+[blog]
+other = "Blog"
+
+[blogSubtitle]
+other = "All the most current news and events of my life"
+
+[archive]
+other = "Archive"
+
+[blogPost]
+other = "Blog Post"
+
+[by]
+other = "by"
+
+[share]
+other = "Share"
+
+[shareOn]
+other = "Share on"
+
+[tags]
+other = "Tags"
+
+[prev]
+other = "Prev"
+
+[next]
+other = "Next"
+
+[comments]
+other = "Comments"
+
+[fullName]
+other = "Full Name"
+
+[yourFullName]
+other = "ej.: Genoveva Lian Hullt"
+
+[emailAddress]
+other = "Email Address"
+
+[yourEmailAddress]
+other = "example@domain.com"
+
+[message]
+other = "Message"
+
+[yourMessage]
+other = "To Write"
+
+[sendMessage]
+other = "Send Message"
+
+[viewProject]
+other = "View Project"
+
+[new]
+other = "new"
+
+[search]
+other = "Search ..."
+
+[recentPosts]
+other = "Recent Posts"
+
+[latestPosts]
+other = "Latest Posts"
+
+[categories]
+other = "Categories"
+
+[followMe]
+other = "Follow Me"
+
+[all]
+other = "All"
+
+[readMore]
+other = "Read More"
+
+[taxonomyPageList]
+other = "Below you will find pages that utilize the taxonomy term “{{ .Title }}”"
+
+[readingTime]
+one = "1 min read"
+other = "{{ .Count }} mins read"
+
+[nextPost]
+other = "Next Post"
+
+[prevPost]
+other = "Previous Post"
+
+[successMessage]
+other = "Thanks, your message is sent successfully."
+
+[errorNum]
+other = "404"
+
+[errorTitle]
+other = "Whoops!"
+
+[errorText]
+other = "The page you’re looking for doesn’t exist or has been moved."

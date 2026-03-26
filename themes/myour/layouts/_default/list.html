@@ -1,0 +1,73 @@
+{{ define "main" }}
+{{ $dateFormat := .Site.Params.dateFormat }}
+
+<div class="background-bg background-bg-inner">
+  <div class="background-filter">
+    <div class="background-img"></div>
+  </div>
+</div>
+
+<div class="section started section-title">
+	<div class="centrize full-width">
+		<div class="vertical-center">
+			<div class="started-content">
+				<h1 class="h-title">
+					{{ .Title }}
+				</h1>
+				<div class="h-subtitles">
+					<div class="h-subtitle">
+						{{ i18n "latestPosts" . }}
+          </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="section blog with-sidebar">
+	<div class="content">
+
+    {{ "<!-- blog items -->" | safeHTML }}
+		<div class="blog-items cols">
+		  {{ range .Paginator.Pages }}
+      <div class="blog-col">
+      	<div class="blog-item content-box">
+      		<div class="post">
+            <div class="image">
+      		    <a class="post-thumbnail" href="{{ .Permalink }}">
+      			    <img src="{{ .Params.featureImage | absURL }}" class="wp-post-image" alt="{{ .Title }}" />
+              </a>
+      			</div>
+      			<div class="desc">
+      			  <div class="date">
+      			    {{ .PublishDate.Format $dateFormat }}
+      			  </div>
+              <!--<div class="categories">{{ with .Params.categories }}{{ delimit . " / "}}{{ end }}</div>-->
+      				<a href="{{ .Permalink }}" class="name">{{ .Title }}</a>
+      				<div class="single-post-text">
+                {{ .Summary }} &#8230;
+                <div>
+                  <a href="{{ .Permalink }}" class="btn">
+                    <span class="animated-button">
+                      <span>{{ i18n "readMore" }}</span>
+                    </span>
+                  </a>
+                </div>
+              </div>
+      			</div>
+      		</div>
+      	</div>
+      </div>
+      {{ end }}
+
+      {{ partial "pagination" . }}
+
+		</div>
+
+    {{ partial "sidebar.html" . }}
+
+		<div class="clear"></div>
+	</div>
+</div>
+
+{{ end }}

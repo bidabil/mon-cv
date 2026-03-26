@@ -1,0 +1,41 @@
+{{ with .Site.Data.home.clients }}
+{{ if .enable }}
+
+{{ "<!-- Section Clients -->" | safeHTML }}
+<div class="section clients" id="section-clients">
+  <div class="content">
+
+    {{ "<!-- title -->" | safeHTML }}
+    <div class="titles">
+      <div class="title">{{ .title }}</div>
+      <div class="subtitle">{{ .subtitle }}</div>
+    </div>
+
+    {{ "<!-- clients items -->" | safeHTML }}
+    <div class="content-carousel">
+      <div class="owl-carousel" data-slidesview="4" data-slidesview_mobile="2">
+        {{ range .items }}
+        <div class="item">
+          <div class="clients-item">
+            <a target="_blank" href="{{ .url }}">
+              <img src="{{ .image | absURL }}" alt="client logo" />
+            </a>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+
+      {{ "<!-- navigation -->" | safeHTML }}
+      <div class="navs">
+        <span class="prev fas fa-chevron-left"></span>
+        <span class="next fas fa-chevron-right"></span>
+      </div>
+
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+
+{{ end }}
+{{ end }}

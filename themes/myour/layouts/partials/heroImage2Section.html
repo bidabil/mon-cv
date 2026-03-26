@@ -1,0 +1,12 @@
+{{ with .Site.Data.home.hero_image2 }}
+{{ if .enable }}
+
+{{ "<!-- Background -->" | safeHTML }}
+<div class="background-bg">
+  <div class="background-filter gradient">
+    <div class="background-img" style="background-image: url({{ .image | absURL }});"></div>
+  </div>
+</div>
+
+{{ end }}
+{{ end }}

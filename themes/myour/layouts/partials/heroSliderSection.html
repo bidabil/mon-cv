@@ -1,0 +1,22 @@
+{{ with .Site.Data.home.hero_slider }}
+{{ if .enable }}
+
+{{ "<!-- Background Slider -->" | safeHTML }}
+<div class="background-bg">
+  <div class="started-carousel">
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        {{ range $index, $image := .images }}
+        <div class="swiper-slide{{ if eq $index 1 }} first{{ end }}">
+          <div class="background-filter">
+            <div class="background-img" style="background-image: url({{ $image | absURL }});"></div>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{ end }}
+{{ end }}

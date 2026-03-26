@@ -1,0 +1,73 @@
+{{ with .Site.Data.home.skills }}
+{{ if .enable }}
+
+{{ range .columns }}
+{{ "<!-- Section Design Skills -->" | safeHTML }}
+<div class="section skills" id="section-skills-{{ .slug }}">
+  <div class="content">
+
+    {{ "<!-- title -->" | safeHTML }}
+    <div class="titles">
+      <div class="title">{{ .title }}</div>
+      <div class="subtitle">{{ .subtitle }}</div>
+    </div>
+
+    {{ "<!-- skills items -->" | safeHTML }}
+    <div class="skills {{ if .type }} {{ .type }}{{ end }}">
+      <ul>
+        {{ if eq .type "default" }}
+				{{ range .items }}
+				<li>
+					<div class="name">{{ .label }}</div>
+          <div class="single-post-text">
+            <p>{{ .text | safeHTML }}</p>
+          </div>
+					<div class="progress">
+						<div class="percentage" style="width:{{ .value }}%;">
+							<span class="percent">{{ .value }}%</span>
+						</div>
+					</div>
+				</li>
+				{{ end }}
+				{{ end }}
+
+				{{ if eq .type "dotted" }}
+				{{ range .items }}
+				<li>
+					<div class="name">{{ .label }}</div>
+          <div class="single-post-text">
+            <p>{{ .text | safeHTML }}</p>
+          </div>
+					<div class="progress">
+						<div class="percentage" style="width: {{ .value }}%;">
+							<span class="percent">{{ .value }}%</span>
+						</div>
+					</div>
+				</li>
+				{{ end }}
+				{{ end }}
+
+				{{ if eq .type "circles" }}
+				{{ range .items }}
+				<li>
+					<div class="progress p{{ .value }}">
+						<div class="percentage"></div>
+						<span>{{ .value }}%</span>
+					</div>
+          <div class="name">{{ .label }}</div>
+          <div class="single-post-text">
+            <p>{{ .text }}</p>
+          </div>
+				</li>
+				{{ end }}
+				{{ end }}
+
+      </ul>
+    </div>
+
+  </div>
+</div>
+{{ end }}
+
+{{ end }}
+{{ end }}

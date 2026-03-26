@@ -1,0 +1,162 @@
+# General Settings
+title = "Myour - One Page Resume CV Hugo Theme"
+baseURL = "https://billelattafi.rf.gd/" #YOUR SITE URL
+languageCode = "en-us"
+theme = "myour"
+resourceDir = "resources"
+summaryLength = 20
+DefaultContentLanguage = "en"
+ignoreLogs = ['warning-goldmark-raw-html']
+
+[pagination]
+pagerSize = 6
+
+# Menu Settings
+[menu]
+[[menu.main]]
+  identifier = "home"
+  name = "Home"
+  url = "/"
+  weight = 1
+  [[menu.main]]
+    identifier = "home-1"
+    parent = "home"
+    name = "Home 1"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    identifier = "home-2"
+    parent = "home"
+    name = "Home 2"
+    url = "/index-2/"
+    weight = 2
+  [[menu.main]]
+    identifier = "home-3"
+    parent = "home"
+    name = "Home 3"
+    url = "/index-3/"
+    weight = 3
+  [[menu.main]]
+    identifier = "home-slider"
+    parent = "home"
+    name = "Home Slider"
+    url = "/index-slider/"
+    weight = 4
+  [[menu.main]]
+    identifier = "home-video"
+    parent = "home"
+    name = "Home Video"
+    url = "/index-video/"
+    weight = 5
+[[menu.main]]
+  identifier = "about"
+  name = "About"
+  url = "#section-about"
+  weight = 2
+[[menu.main]]
+  identifier = "resume"
+  name = "Resume"
+  url = "#section-experience"
+  weight = 3
+[[menu.main]]
+  identifier = "portfolio"
+  name = "Portfolio"
+  url = "#section-portfolio"
+  weight = 4
+[[menu.main]]
+  identifier = "contacts"
+  name = "Contacts"
+  url = "#section-contacts"
+  weight = 5
+[[menu.main]]
+  identifier = "blog"
+  name = "Blog"
+  url = "/blog/"
+  weight = 6
+  [[menu.main]]
+    identifier = "pages-blog-list"
+    parent = "blog"
+    name = "Blog List"
+    url = "/blog/"
+    weight = 1
+  [[menu.main]]
+    identifier = "pages-blog-single"
+    parent = "blog"
+    name = "Blog Single"
+    url = "/blog/designer-conference-at-florida-2020/"
+    weight = 2
+
+# Main Settings
+[params]
+skinColor = "" #PREDEFINED COLOR SCHEMES: [ "beige", "blue", "brown", "green_light", "green", "orange", "purple", "red", "yellow_light", "yellow" ]
+dateFormat = "January 2, 2006"
+authorName = "Joé Wilson"
+disqusComments = "test" #YOUR DISQUS COMMENTS SHORTNAME
+formspreeURL = "" #YOUR FORMSPREE URL
+googleAnalytics = "" #YOUR GOOGLE ANALYTICS CODE
+
+# Header Settings
+[params.header]
+logo_image = "images/logo.png"
+logo_text = "Joé <br />Wilson"
+logo_alt = "Joé Wilson"
+button_text = "Download CV"
+button_url = "files/Resume-Template.pdf"
+button_icon = "fas fa-download"
+button_download = true
+
+# Social Settings
+[[params.social]]
+title = "Twitter"
+icon = "fab fa-twitter"
+url = "https://www.twitter.com/"
+weight = 1
+[[params.social]]
+title = "Dribbble"
+icon = "fab fa-dribbble"
+url = "https://www.dribbble.com/"
+weight = 2
+[[params.social]]
+title = "Behance"
+icon = "fab fa-behance"
+url = "https://www.behance.net/"
+weight = 3
+
+# Sidebar
+[params.sidebar]
+enable = 1 #SIDEBAR SHOW: [ 1 - yes, 0 - no ]
+search = 1 #SIDEBAR SEARCH WIDGET: [ 1 - yes, 0 - no ]
+latestPosts = 1 #SIDEBAR LATEST POSTS WIDGET: [ 1 - yes, 0 - no ]
+categories = 1 #SIDEBAR CATEGORIES TAXONOMY WIDGET: [ 1 - yes, 0 - no ]
+tags = 1 #SIDEBAR TAG TAXONOMY WIDGET: [ 1 - yes, 0 - no ]
+
+# Portfolio Settings
+[params.portfolio]
+homeNumOfItems = 12
+[[params.portfolio.filters]]
+name = "Video"
+slug = "f-video"
+[[params.portfolio.filters]]
+name = "Music"
+slug = "f-music"
+[[params.portfolio.filters]]
+name = "Links"
+slug = "f-link"
+[[params.portfolio.filters]]
+name = "Image"
+slug = "f-image"
+[[params.portfolio.filters]]
+name = "Gallery"
+slug = "f-gallery"
+[[params.portfolio.filters]]
+name = "Content"
+slug = "f-content"
+
+# Sitemap Settings
+[sitemap]
+changefreq = "monthly"
+priority = 0.5
+filename = "sitemap.xml"
+
+[outputs]
+home = ["HTML", "RSS", "JSON"]

@@ -1,0 +1,47 @@
+{{ with .Site.Data.home.testimonials }}
+{{ if .enable }}
+
+{{ "<!-- Section Testimonials -->" | safeHTML }}
+<div class="section testimonials" id="section-testimonials">
+  <div class="content">
+
+    {{ "<!-- title -->" | safeHTML }}
+    <div class="titles">
+      <div class="title">{{ .title }}</div>
+      <div class="subtitle">{{ .subtitle }}</div>
+    </div>
+
+    {{ "<!-- testimonials items -->" | safeHTML }}
+    <div class="content-carousel">
+      <div class="owl-carousel" data-slidesView="2" data-slidesview_mobile="1">
+        {{ range .items }}
+        <div class="item">
+          <div class="reviews-item">
+            <div class="image">
+              <img src="{{ .image | absURL }}" alt="{{ .name }}" />
+            </div>
+            <div class="info">
+              <div class="name">{{ .name }}</div>
+              <div class="company">{{ .role }}</div>
+            </div>
+            <div class="text">
+              {{ .text | safeHTML }}
+            </div>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+
+      {{ "<!-- navigation -->" | safeHTML }}
+      <div class="navs">
+        <span class="prev fas fa-chevron-left"></span>
+        <span class="next fas fa-chevron-right"></span>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+{{ end }}
+{{ end }}

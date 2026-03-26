@@ -1,0 +1,57 @@
+{{ with .Site.Data.home.pricing }}
+{{ if .enable }}
+
+{{ "<!-- Section Pricing -->" | safeHTML }}
+<div class="section pricing" id="section-pricing">
+  <div class="content">
+
+    {{ "<!-- title -->" | safeHTML }}
+    <div class="titles">
+      <div class="title">{{ .title }}</div>
+      <div class="subtitle">{{ .subtitle }}</div>
+    </div>
+
+    {{ "<!-- pricing items -->" | safeHTML }}
+    <div class="content-carousel">
+      <div class="owl-carousel" data-slidesview="2" data-slidesview_mobile="1">
+        {{ range .items }}
+        <div class="item">
+          <div class="pricing-item">
+            <div class="icons"><i class="{{ .icon }}"></i></div>
+            <div class="name">{{ .name | safeHTML }}</div>
+            <div class="amount">
+              <span class="number">
+                <span class="dollar">{{ .price_before }}</span>
+                <span>{{ .price }}</span>
+                <span class="period">{{ .price_after }}</span>
+              </span>
+            </div>
+            <div class="feature-list">
+              <ul>
+                {{ range .list }}
+                <li{{ if eq .disable "yes" }} class="disable"{{ end }}>{{ .value }}</li>
+                {{ end }}
+              </ul>
+            </div>
+            <a href="{{ .link }}" class="btn">
+              <span class="animated-button"><span>{{ .button }}</span></span>
+              <i class="icon fas fa-chevron-right"></i>
+            </a>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+
+      {{ "<!-- navigation -->" | safeHTML }}
+      <div class="navs">
+        <span class="prev fas fa-chevron-left"></span>
+        <span class="next fas fa-chevron-right"></span>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+{{ end }}
+{{ end }}

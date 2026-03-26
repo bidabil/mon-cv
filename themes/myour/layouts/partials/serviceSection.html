@@ -1,0 +1,36 @@
+{{ with .Site.Data.home.services }}
+{{ if .enable }}
+
+{{ "<!-- Section Service -->" | safeHTML }}
+<div class="section service" id="section-services">
+  <div class="content">
+
+    {{ "<!-- title -->" | safeHTML }}
+    <div class="titles">
+      <div class="title">{{ .title }}</div>
+      <div class="subtitle">{{ .subtitle }}</div>
+    </div>
+
+    {{ "<!-- services items -->" | safeHTML }}
+    <div class="service-items">
+      {{ range .items }}
+      <div class="service-col">
+        <div class="service-item">
+          <div class="icon"><i class="{{ .icon }}"></i></div>
+          <div class="name">{{ .name | safeHTML }}</div>
+          <div class="single-post-text">
+            <p>
+              {{ .text | safeHTML }}
+            </p>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+
+{{ end }}
+{{ end }}

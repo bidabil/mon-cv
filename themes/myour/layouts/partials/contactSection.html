@@ -1,0 +1,61 @@
+{{ $action := .Site.Params.formspreeURL }}
+{{ with .Site.Data.home.contacts }}
+{{ if .enable }}
+
+{{ "<!-- Section Contacts Info -->" | safeHTML }}
+<div class="section contacts" id="section-contacts">
+  <div class="content">
+
+    {{ "<!-- title -->" | safeHTML }}
+    <div class="titles">
+      <div class="title">{{ .title }}</div>
+      <div class="subtitle">{{ .subtitle }}</div>
+    </div>
+
+    {{ "<!-- contact form -->" | safeHTML }}
+    <div class="contact-form">
+      <form id="cform" action="{{ $action }}" method="post">
+        <div class="group-val">
+          <div class="label">{{ i18n "fullName" }} <strong>*</strong></div>
+            <input type="text" name="name" placeholder="{{ i18n "yourFullName" }}" />
+        </div>
+        <div class="group-val">
+          <div class="label">{{ i18n "emailAddress" }} <strong>*</strong></div>
+          <input type="email" name="email" placeholder="{{ i18n "yourEmailAddress" }}" />
+        </div>
+        <div class="group-val">
+          <div class="label">{{ i18n "message" }} <strong>*</strong></div>
+          <textarea name="message" placeholder="{{ i18n "yourMessage" }}"></textarea>
+        </div>
+        <div class="group-bts">
+          <button type="submit" class="btn">
+            <span class="animated-button"><span>{{ i18n "sendMessage" }}</span></span>
+            <i class="icon fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </form>
+      <div class="alert-success" id="formAlertSuccess">
+        <p>{{ i18n "successMessage" }}</p>
+      </div>
+    </div>
+
+    {{ "<!-- contact info -->" | safeHTML }}
+    <div class="contact-info">
+      <div class="name">{{ .name }}</div>
+      <div class="subname">{{ .subname }}</div>
+      <div class="info-list">
+        <ul>
+          {{ range .list }}
+          <li><strong>{{ .label }}</strong> {{ .value }}</li>
+          {{ end }}
+        </ul>
+      </div>
+      <div class="author">{{ .signature }}</div>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+
+{{ end }}
+{{ end }}

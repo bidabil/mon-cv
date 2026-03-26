@@ -1,0 +1,52 @@
+{{ $sidebar := .Site.Params.sidebar }}
+
+<div class="content-sidebar">
+    <aside id="secondary" class="widget-area">
+        {{ if $sidebar.search }}
+        <div id="search" class="widget widget_search">
+            <form class="search-form" action="{{ "search" | absURL }}">
+                <div class="search-form-label">
+                    <input type="search" class="search-field" id="searchInput" placeholder="{{ i18n "search" }}" value="" />
+                    <input type="submit" class="search-submit" value="{{ i18n "search" }}" />
+                </div>
+                <ul id="searchResults"></ul>
+            </form>
+        </div>
+        {{ end }}
+
+        {{ if $sidebar.latestPosts }}
+        <section class="widget widget_recent_entries">
+            <h2 class="widget-title">{{ i18n "latestPosts" }}</h2>
+            <ul>
+                {{ range first 4 (where .Site.RegularPages "Section" "blog") }}
+                <li>
+                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                </li>
+                {{ end }}
+            </ul>
+        </section>
+        {{ end }}
+
+        {{ if $sidebar.categories }}
+        <section class="widget widget_categories">
+            <h2 class="widget-title">{{ i18n "categories" }}</h2>
+            <ul>
+              {{ range .Site.Taxonomies.categories }}
+              <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> <small>({{ .Count }})</small></li>
+              {{ end }}
+            </ul>
+        </section>
+        {{ end }}
+
+        {{ if $sidebar.tags }}
+        <section class="widget widget_tags">
+            <h2 class="widget-title">{{ i18n "tags" }}</h2>
+            <ul>
+              {{ range .Site.Taxonomies.tags }}
+              <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> <small>({{ .Count }})</small></li>
+              {{ end }}
+            </ul>
+        </section>
+        {{ end }}
+    </aside>
+</div>
