@@ -7,27 +7,27 @@
   position: relative;
   overflow: hidden;
   display: inline-block;
-  line-height: 16px;
+  line-height: 50px;
   font-size: 14px;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: #fff;
-  text-shadow: 0 16px 0 #007bff;
+  text-shadow: 0 50px 0 #007bff;
 }
 
-.lang-switch-btn em {
-  min-width: 5px;
-  display: inline-block;
-  vertical-align: middle;
-  font-style: normal;
-  backface-visibility: hidden;
-  transition: transform 0.3s ease;
-  transform: translateY(0);
+.lang-switch-btn::after {
+  content: attr(data-target);
+  position: absolute;
+  left: 0;
+  top: 50px;
+  width: 100%;
+  color: #fff;
+  text-shadow: none;
 }
 
-.lang-switch-item:hover .lang-switch-btn em {
-  transform: translateY(calc(16px * -1));
+.lang-switch-item:hover .lang-switch-btn {
+  transform: translateY(-50px);
 }
 
 /* ============================================

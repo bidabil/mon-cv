@@ -159,7 +159,7 @@
 	/*
 		Button Hover
 	*/
-	$('.animated-button span, .lang-switch-btn').each(function (index) {
+	$('.animated-button span').each(function (index) {
 		var characters = $(this).text().split("");
 		var label = $(this);
 		label.empty();
