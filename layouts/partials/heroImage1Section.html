@@ -1,5 +1,4 @@
-{{- $home := cond (eq $.Site.Language.Lang "en") $.Site.Data.en.home $.Site.Data.home -}}
-{{ with $home.hero_image1 }}
+{{ with .hero_image1 }}
 {{ if .enable }}
 
 {{ "<!-- Background -->" | safeHTML }}

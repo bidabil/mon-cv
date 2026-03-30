@@ -12,7 +12,7 @@
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: #fff;
-  text-shadow: 0 16px 0 #007bff;
+  text-shadow: 0 16px 0 var(--active-color, #68e0cf);
 }
 
 .lang-switch-btn em {

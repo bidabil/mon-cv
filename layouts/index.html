@@ -1,0 +1,56 @@
+{{ define "main" }}
+
+{{ $page := . }}
+{{- $home := cond (eq $.Site.Language.Lang "en") $.Site.Data.en.home $.Site.Data.home -}}
+
+{{ with $home.hero_image1 }}
+{{ if .enable }}
+  {{ partial "heroImage1Section.html" (dict "hero_image1" .) }}
+{{ end }}
+{{ end }}
+
+{{ with $home.hero_image2 }}
+{{ if .enable }}
+  {{ partial "heroImage2Section.html" . }}
+{{ end }}
+{{ end }}
+
+{{ with $home.hero_image3 }}
+{{ if .enable }}
+  {{ partial "heroImage3Section.html" . }}
+{{ end }}
+{{ end }}
+
+{{ with $home.hero_slider }}
+{{ if .enable }}
+  {{ partial "heroSliderSection.html" . }}
+{{ end }}
+{{ end }}
+
+{{ with $home.hero_video }}
+{{ if .enable }}
+  {{ partial "heroVideoSection.html" . }}
+{{ end }}
+{{ end }}
+
+{{ partial "startedSection.html" . }}
+
+{{ partial "aboutSection.html" . }}
+
+{{ partial "serviceSection.html" . }}
+
+{{ partial "pricingSection.html" . }}
+
+{{ partial "resumeSection.html" . }}
+
+{{ partial "skillSection.html" . }}
+
+{{ partial "testimonialSection.html" . }}
+
+{{ partial "clientsSection.html" . }}
+
+{{ partial "portfolioSection.html" . }}
+
+{{ partial "contactSection.html" . }}
+
+{{ end }}
