@@ -1,5 +1,4 @@
-{{- $home := cond (eq $.Site.Language.Lang "en") $.Site.Data.en.home $.Site.Data.home -}}
-{{ with $home.hero_slider }}
+{{ with .hero_slider }}
 {{ if .enable }}
 
 {{ "<!-- Background Slider -->" | safeHTML }}
@@ -8,7 +7,7 @@
     <div class="swiper-container">
       <div class="swiper-wrapper">
         {{ range $index, $image := .images }}
-        <div class="swiper-slide{{ if eq $index 1 }} first{{ end }}">
+        <div class="swiper-slide{{ if eq $index 0 }} first{{ end }}">
           <div class="background-filter">
             <div class="background-img" style="background-image: url({{ $image | absURL }});"></div>
           </div>

@@ -11,25 +11,25 @@
 
 {{ with $home.hero_image2 }}
 {{ if .enable }}
-  {{ partial "heroImage2Section.html" . }}
+  {{ partial "heroImage2Section.html" (dict "hero_image2" .) }}
 {{ end }}
 {{ end }}
 
 {{ with $home.hero_image3 }}
 {{ if .enable }}
-  {{ partial "heroImage3Section.html" . }}
+  {{ partial "heroImage3Section.html" (dict "hero_image3" .) }}
 {{ end }}
 {{ end }}
 
 {{ with $home.hero_slider }}
 {{ if .enable }}
-  {{ partial "heroSliderSection.html" . }}
+  {{ partial "heroSliderSection.html" (dict "hero_slider" .) }}
 {{ end }}
 {{ end }}
 
 {{ with $home.hero_video }}
 {{ if .enable }}
-  {{ partial "heroVideoSection.html" . }}
+  {{ partial "heroVideoSection.html" (dict "hero_video" .) }}
 {{ end }}
 {{ end }}
 
