@@ -2,32 +2,31 @@
    Language Switcher
    ============================================ */
 
-/* Language switcher — match menu hover animation */
+/* Language switcher — exact same animation as menu items */
 .lang-switch-btn {
   position: relative;
   overflow: hidden;
   display: inline-block;
-  line-height: 50px;
   font-size: 14px;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: #fff;
+  text-shadow: 0 16px 0 #007bff;
 }
 
-.lang-switch-btn::after {
-  content: attr(data-target);
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  color: #007bff;
-  transform: translateY(50px);
+.lang-switch-btn em {
+  min-width: 5px;
+  display: inline-block;
+  vertical-align: middle;
+  font-style: normal;
+  backface-visibility: hidden;
   transition: transform 0.3s ease;
+  transform: translateY(0);
 }
 
-.lang-switch-item:hover .lang-switch-btn::after {
-  transform: translateY(0);
+.lang-switch-item:hover .lang-switch-btn em {
+  transform: translateY(-16px);
 }
 
 /* ============================================
