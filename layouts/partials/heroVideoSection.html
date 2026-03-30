@@ -1,0 +1,9 @@
+{{- $home := cond (eq $.Site.Language.Lang "en") $.Site.Data.en.home $.Site.Data.home -}}
+{{ with $home.hero_video }}
+{{ if .enable }}
+
+{{ "<!-- Background Video -->" | safeHTML }}
+<div class="background-bg jarallax-video" data-jarallax-video="{{ .video }}"></div>
+
+{{ end }}
+{{ end }}

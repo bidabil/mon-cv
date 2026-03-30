@@ -1,0 +1,247 @@
+# English content — data/en/home.yml
+
+### Hero Images
+hero_image1:
+  enable: true
+  image: "images/man.jpg"
+
+hero_image2:
+  enable: true
+  image: "images/man2.jpg"
+
+hero_image3:
+  enable: true
+  image: "images/girl3.jpg"
+
+hero_video:
+  enable: true
+  video: "https://youtu.be/S4L8T2kFFck"
+
+hero_slider:
+  enable: true
+  images:
+    - "images/girl.jpg"
+    - "images/girl3.jpg"
+    - "images/girl2.jpg"
+
+### Started
+started:
+  enable: true
+  title: "Billel <br />Attafi"
+  typed:
+    - "Senior .NET Engineer"
+    - "Backend Architect & Cloud"
+    - "DevSecOps Expert"
+    - "Independent IT Consultant"
+  text: "Senior software engineer based in Marseille, France. 10+ years of experience designing high-performance backend systems and distributed architectures. Available for freelance missions and IT modernization projects for regulated environments."
+  button:
+    text: "Get in touch"
+    link: "#section-contacts"
+
+### About
+about:
+  enable: true
+  title: "About"
+  subtitle: "My profile"
+  text: "<p>Senior software engineer with 10+ years of experience designing high-performance backend systems, distributed architectures, and geospatial solutions. Expert in .NET, PostgreSQL/PostGIS and Clean Architecture — known for building scalable, production-grade systems for major accounts (APRR, CMA CGM, ArcelorMittal).</p><p>I also support organizations with high confidentiality requirements in modernizing their information systems: data security, regulatory compliance, and IT infrastructure optimization.</p>"
+  list:
+    - label: "Location"
+      value: "Marseille, France"
+
+    - label: "Freelance"
+      value: "Available"
+
+    - label: "Phone"
+      value: "+33 7 48 24 41 37"
+
+    - label: "Email"
+      value: "contact@billelattafi.fr"
+
+    - label: "LinkedIn"
+      value: "linkedin.com/in/billelattafi"
+
+### Services
+services:
+  enable: true
+  title: "Services"
+  subtitle: "What I do"
+  items:
+    - icon: "fas fa-layer-group"
+      name: "Backend <br />Architecture"
+      text: "Design of scalable distributed systems using Clean Architecture with advanced patterns (CQRS, Mediator, Event-driven)."
+
+    - icon: "fas fa-shield-alt"
+      name: "Security <br />& Compliance"
+      text: "DevSecOps, secure CI/CD pipelines with SBOM, SAST, Cosign image signing, SLSA and regulatory compliance."
+
+    - icon: "fas fa-map-marked-alt"
+      name: "Geospatial <br />Solutions"
+      text: "Advanced geospatial APIs, geocoding, routing and logistics optimization with PostGIS and NetTopologySuite."
+
+    - icon: "fas fa-database"
+      name: "Performance <br />& Data"
+      text: "PostgreSQL optimization (indexing, partitioning, JSONB), IoT data processing and high-performance batch jobs."
+
+    - icon: "fas fa-project-diagram"
+      name: "IT System <br />Modernization"
+      text: "Audit, migration and modernization of application stacks for regulated organizations. Digital transformation support."
+
+    - icon: "fas fa-users"
+      name: "Technical <br />Leadership"
+      text: "Team mentoring (up to 8 devs), code review, architecture decisions and Agile/Scrum coaching."
+
+### Pricing
+pricing:
+  enable: false
+
+### Resume
+resume:
+  enable: true
+  experience:
+    title: "Experience"
+    subtitle: "Professional background"
+    items:
+      - year: "2025 — Present"
+        name: "Tech Lead – Senior Backend .NET Developer <br />Davidson (Mission APRR — Flux Libre) | Dijon"
+        text: "Design of a scalable backend architecture (Clean Architecture, Mediator, RabbitMQ). PostgreSQL modeling for high-traffic toll flows. CI/CD pipelines on Azure DevOps with DevSecOps practices. Technical mentoring in Agile context."
+
+      - year: "2024 — 2025"
+        name: "Senior Backend .NET Developer <br />NOOEH (Mission Colis Privé — CMA CGM) | Marseille"
+        text: "Advanced geospatial APIs (NetTopologySuite + PostGIS). Geospatial distance batch optimization: −40% execution time. Postal boundary management and logistics routing engine. Team lead (5 devs)."
+
+      - year: "2023 — 2024"
+        name: "Software Development Engineer <br />My Kiwi (Mission ArcelorMittal) | Marseille"
+        text: "Modernization of a critical industrial platform: migration from Visual Basic 6 to .NET Core & Angular (+32% performance). IoT platform integration for real-time industrial data analysis."
+
+      - year: "2023"
+        name: "Head of C# Development <br />IT Systèmes | Paris"
+        text: "Management of a team of 8 .NET developers (+25% productivity). Design of a modular Microsoft Teams plugin in Clean Architecture, integrating SharePoint and Azure AD via Microsoft Graph API."
+
+      - year: "2015 — 2022"
+        name: "COO / Project Manager / Full Stack Developer <br />Hostaplast | Algiers, Algeria"
+        text: "National logistics optimization across 4,000 sales points: −60% operational costs. Internal geospatial API replacing Google Maps entirely: −100% licensing costs. Full .NET + SQL Server ERP."
+
+  education:
+    title: "Education"
+    subtitle: "Academic background"
+    items:
+      - year: "2015 — 2017"
+        name: "Master's in Parallel Architecture & Intensive Computing <br />USTHB — Algiers"
+        text: "Specialization in distributed systems, high-performance computing and parallel architectures."
+
+      - year: "2010 — 2015"
+        name: "Bachelor's in Information Systems & Software Engineering <br />USTHB — Algiers"
+        text: "Software engineering, information systems and application development."
+
+### Skills
+skills:
+  enable: true
+  columns:
+    - type: "default"
+      title: "Backend & Architecture"
+      subtitle: "Core skills"
+      slug: "backend"
+      items:
+        - label: "C# / .NET Core"
+          value: "98"
+          text: "10+ years of .NET expertise. Minimal API, Clean Architecture, advanced Design Patterns."
+
+        - label: "Clean Architecture / SOLID"
+          value: "95"
+          text: "Design of maintainable and testable systems at scale."
+
+        - label: "PostgreSQL / PostGIS"
+          value: "90"
+          text: "Advanced modeling, indexing, partitioning, JSONB and geospatial queries."
+
+        - label: "Event-Driven (RabbitMQ / Kafka)"
+          value: "85"
+          text: "Asynchronous architecture, publishers/consumers, horizontal scalability."
+
+    - type: "dotted"
+      title: "DevSecOps & CI/CD"
+      subtitle: "Security & delivery"
+      slug: "devsecops"
+      items:
+        - label: "GitHub Actions / Azure DevOps"
+          value: "90"
+          text: "Full CI/CD pipelines with quality gates, automated tests and continuous deployment."
+
+        - label: "Docker & Multi-arch builds"
+          value: "88"
+          text: "Containerization, multi-architecture builds (amd64/arm64), image optimization."
+
+        - label: "SAST / SBOM / Cosign"
+          value: "85"
+          text: "Supply chain security: Semgrep, CodeQL, SLSA, keyless image signing."
+
+        - label: "GitLab CI"
+          value: "80"
+          text: "GitLab pipelines, runners and DevSecOps integration."
+
+    - type: "circles"
+      title: "Other skills"
+      subtitle: "Technical ecosystem"
+      slug: "autres"
+      items:
+        - label: "NetTopologySuite / GIS"
+          value: "90"
+          text: "Advanced geospatial, geocoding, routing and tour optimization."
+
+        - label: "Microservices"
+          value: "88"
+          text: "Distributed architecture, inter-service communication, resilience."
+
+        - label: "Azure AD / Graph API"
+          value: "80"
+          text: "Microsoft 365 integration, Teams SDK, SharePoint."
+
+        - label: "WPF / MVVM"
+          value: "85"
+          text: ".NET desktop applications, advanced data binding, real-time supervision."
+
+        - label: "Python"
+          value: "70"
+          text: "Scripting, automation, DevSecOps tooling."
+
+        - label: "Tech Leadership"
+          value: "92"
+          text: "Management up to 8 devs, mentoring, code review and architecture decisions."
+
+### Testimonials
+testimonials:
+  enable: false
+
+### Clients
+clients:
+  enable: false
+
+### Portfolio
+portfolio:
+  enable: true
+  title: "Portfolio"
+  subtitle: "Key projects"
+
+### Contact
+contacts:
+  enable: true
+  title: "Contact"
+  subtitle: "Let's work together"
+  name: "Billel Attafi"
+  subname: "Senior .NET Engineer & Independent IT Consultant"
+  signature: "Billel Attafi"
+  list:
+    - label: "Location:"
+      value: "Marseille, France"
+
+    - label: "Freelance:"
+      value: "Available"
+
+    - label: "Phone:"
+      value: "+33 7 48 24 41 37"
+
+    - label: "Email:"
+      value: "contact@billelattafi.fr"
+
+    - label: "LinkedIn:"
+      value: "linkedin.com/in/billelattafi"

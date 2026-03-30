@@ -1,4 +1,36 @@
 /* ============================================
+   Language Switcher
+   ============================================ */
+
+/* Language switcher — slide to target language on hover */
+.lang-switch-btn {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  line-height: 16px;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #fff;
+  transition: transform 0.3s ease;
+}
+
+.lang-switch-btn::after {
+  content: attr(data-target);
+  position: absolute;
+  left: 0;
+  top: 16px;
+  width: 100%;
+  text-align: left;
+  color: #fff;
+}
+
+.lang-switch-item a:hover .lang-switch-btn {
+  transform: translateY(-16px);
+}
+
+/* ============================================
    Animated Icons — Service Section
    ============================================ */
 
