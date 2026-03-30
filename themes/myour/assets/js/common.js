@@ -172,7 +172,10 @@
 		One Page Menu
 	*/
 	$('header .top-menu').on('click', 'a', function(){
-		var link = $(this).attr('href').replace('/#section-', '#section-');
+		var link = $(this).attr('href');
+		if(link.indexOf('/#section-') !== -1) {
+			link = link.replace('/#section-', '#section-');
+		}
 
 		if(link.indexOf('#section-') == 0){
 			if(!$('body').hasClass('home')){

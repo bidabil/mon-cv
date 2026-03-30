@@ -33,7 +33,7 @@
             {{ $menuURL := .URL | absLangURL }}
             {{ $pageURL:= $currentPage.Permalink | absLangURL }}
             {{ $active := eq $menuURL $pageURL }}
-						<li class="menu-item {{ if .HasChildren }} menu-item-has-children{{ end }}">
+						<li class="menu-item{{ if .HasChildren }} menu-item-has-children{{ end }}{{ if $active }} current-menu-item{{ end }}">
 							<a href="{{ .URL }}">
 								<span class="animated-button"><span>{{ .Name }}</span></span>
 							</a>
