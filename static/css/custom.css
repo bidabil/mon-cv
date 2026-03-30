@@ -2,7 +2,7 @@
    Language Switcher
    ============================================ */
 
-/* Language switcher — slide to target language on hover */
+/* Language switcher — match menu hover animation */
 .lang-switch-btn {
   position: relative;
   overflow: hidden;
@@ -13,21 +13,21 @@
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: #fff;
-  text-shadow: 0 50px 0 #007bff;
 }
 
 .lang-switch-btn::after {
   content: attr(data-target);
   position: absolute;
   left: 0;
-  top: 50px;
+  top: 0;
   width: 100%;
-  color: #fff;
-  text-shadow: none;
+  color: #007bff;
+  transform: translateY(50px);
+  transition: transform 0.3s ease;
 }
 
-.lang-switch-item:hover .lang-switch-btn {
-  transform: translateY(-50px);
+.lang-switch-item:hover .lang-switch-btn::after {
+  transform: translateY(0);
 }
 
 /* ============================================
