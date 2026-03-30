@@ -36,9 +36,9 @@ started:
   typed:
     - "Senior .NET Engineer"
     - "Architecte Backend & Cloud"
-    - "Expert Clean Architecture"
-    - "Consultant Freelance DevSecOps"
-  text: "Ingénieur logiciel senior basé à Marseille, avec 10+ ans d'expérience dans la conception de systèmes backend haute performance, d'architectures distribuées et de solutions géospatiales. Expert .NET, Clean Architecture et DevSecOps."
+    - "Expert DevSecOps"
+    - "Consultant IT Indépendant"
+  text: "Ingénieur logiciel senior basé à Marseille, 10+ ans d'expérience dans la conception de systèmes backend haute performance et d'architectures distribuées. Disponible pour missions freelance et accompagnement de structures réglementées dans la modernisation de leur SI."
   button:
     text: "Me contacter"
     link: "#section-contacts"
@@ -48,7 +48,7 @@ about:
   enable: true
   title: "À propos"
   subtitle: "Mon profil"
-  text: "<p>Ingénieur logiciel senior avec 10+ ans d'expérience dans la conception de systèmes backend haute performance, d'architectures distribuées et de solutions géospatiales. Expert en .NET, PostgreSQL/PostGIS et Clean Architecture, reconnu pour concevoir des systèmes scalables et fiables en production.</p><p>Expérimenté dans la mise en place de pipelines CI/CD sécurisés intégrant les pratiques DevSecOps modernes (SBOM, signature d'image, supply chain security, SAST). Habitué à diriger des équipes techniques, à prendre des décisions d'architecture et à livrer des systèmes critiques en production.</p>"
+  text: "<p>Ingénieur logiciel senior avec 10+ ans d'expérience dans la conception de systèmes backend haute performance, d'architectures distribuées et de solutions géospatiales. Expert en .NET, PostgreSQL/PostGIS et Clean Architecture, reconnu pour concevoir des systèmes scalables et fiables en production. Habitué à diriger des équipes techniques et à livrer des systèmes critiques pour des grands comptes (APRR, CMA CGM, ArcelorMittal).</p><p>En parallèle, j'accompagne des structures à forts enjeux de confidentialité dans la modernisation de leur système d'information : sécurisation des données, conformité réglementaire et optimisation du parc informatique.</p>"
   list:
     - label: "Résidence"
       value: "Marseille, France"
@@ -60,7 +60,7 @@ about:
       value: "+33 7 48 24 41 37"
 
     - label: "E-mail"
-      value: "attafi.billel@gmail.com"
+      value: "contact@billelattafi.fr"
 
     - label: "LinkedIn"
       value: "linkedin.com/in/billelattafi"
@@ -76,8 +76,8 @@ services:
       text: "Conception de systèmes distribués scalables en Clean Architecture, avec patterns avancés (CQRS, Mediator, Event-driven)."
 
     - icon: "fas fa-shield-alt"
-      name: "DevSecOps <br />& CI/CD"
-      text: "Pipelines CI/CD sécurisés avec SBOM, SAST, signature d'image Cosign, SLSA et quality gates automatisés."
+      name: "Sécurité <br />& Conformité"
+      text: "DevSecOps, pipelines CI/CD sécurisés avec SBOM, SAST, signature d'image Cosign, SLSA et conformité réglementaire."
 
     - icon: "fas fa-map-marked-alt"
       name: "Solutions <br />Géospatiales"
@@ -88,8 +88,8 @@ services:
       text: "Optimisation PostgreSQL (indexation, partitionnement, JSONB), traitement de données IoT et batchs haute performance."
 
     - icon: "fas fa-project-diagram"
-      name: "Microservices <br />& Event-Driven"
-      text: "Architecture microservices, messaging asynchrone avec RabbitMQ/Kafka, Minimal APIs haute performance."
+      name: "Modernisation <br />SI"
+      text: "Audit, migration et modernisation du parc applicatif pour structures réglementées. Accompagnement à la transformation numérique."
 
     - icon: "fas fa-users"
       name: "Leadership <br />Technique"
@@ -233,7 +233,7 @@ contacts:
   title: "Contact"
   subtitle: "Travaillons ensemble"
   name: "Billel Attafi"
-  subname: "Senior .NET Engineer & Consultant Freelance"
+  subname: "Senior .NET Engineer & Consultant IT Indépendant"
   signature: "Billel Attafi"
   list:
     - label: "Résidence:"
@@ -246,7 +246,7 @@ contacts:
       value: "+33 7 48 24 41 37"
 
     - label: "E-mail:"
-      value: "attafi.billel@gmail.com"
+      value: "contact@billelattafi.fr"
 
     - label: "LinkedIn:"
       value: "linkedin.com/in/billelattafi"

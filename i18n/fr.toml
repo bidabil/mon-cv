@@ -1,0 +1,120 @@
+[home]
+other = "Accueil"
+
+[blog]
+other = "Blog"
+
+[blogSubtitle]
+other = "Actualités et réflexions"
+
+[archive]
+other = "Archives"
+
+[blogPost]
+other = "Article"
+
+[all]
+other = "Tous"
+
+[readMore]
+other = "Lire la suite"
+
+[by]
+other = "Par"
+
+[fullName]
+other = "Nom complet"
+
+[yourFullName]
+other = "ex : Dupont Jean"
+
+[emailAddress]
+other = "Adresse e-mail"
+
+[yourEmailAddress]
+other = "exemple@domaine.com"
+
+[message]
+other = "Message"
+
+[yourMessage]
+other = "Écrivez votre message ici"
+
+[sendMessage]
+other = "Envoyer le message"
+
+[viewProject]
+other = "Voir le projet"
+
+[new]
+other = "nouveau"
+
+[search]
+other = "Rechercher ..."
+
+[recentPosts]
+other = "Articles récents"
+
+[latestPosts]
+other = "Derniers articles"
+
+[categories]
+other = "Catégories"
+
+[followMe]
+other = "Me suivre"
+
+[share]
+other = "Partager"
+
+[shareOn]
+other = "Partager sur"
+
+[tags]
+other = "Mots-clés"
+
+[comments]
+other = "Commentaires"
+
+[prev]
+other = "Précédent"
+
+[next]
+other = "Suivant"
+
+[nextPost]
+other = "Article suivant"
+
+[prevPost]
+other = "Article précédent"
+
+[nextProject]
+other = "Projet suivant"
+
+[prevProject]
+other = "Projet précédent"
+
+[readingTime]
+one = "1 min de lecture"
+other = "{{ .Count }} mins de lecture"
+
+[successMessage]
+other = "Merci, votre message a bien été envoyé."
+
+[developedBy]
+other = "Développé par"
+
+[category]
+other = "Catégorie"
+
+[errorNum]
+other = "404"
+
+[errorTitle]
+other = "Oups !"
+
+[errorText]
+other = "La page que vous recherchez n'existe pas ou a été déplacée."
+
+[taxonomyPageList]
+other = "Pages utilisant le terme {{ .Title }}"

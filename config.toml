@@ -5,7 +5,7 @@ languageCode = "en-us"
 theme = "myour"
 resourceDir = "resources"
 summaryLength = 20
-DefaultContentLanguage = "en"
+DefaultContentLanguage = "fr"
 ignoreLogs = ['warning-goldmark-raw-html']
 
 [pagination]
@@ -16,38 +16,8 @@ pagerSize = 6
 [[menu.main]]
   identifier = "home"
   name = "Home"
-  url = "/"
+  url = "/index-slider/"
   weight = 1
-  [[menu.main]]
-    identifier = "home-1"
-    parent = "home"
-    name = "Home 1"
-    url = "/"
-    weight = 1
-  [[menu.main]]
-    identifier = "home-2"
-    parent = "home"
-    name = "Home 2"
-    url = "/index-2/"
-    weight = 2
-  [[menu.main]]
-    identifier = "home-3"
-    parent = "home"
-    name = "Home 3"
-    url = "/index-3/"
-    weight = 3
-  [[menu.main]]
-    identifier = "home-slider"
-    parent = "home"
-    name = "Home Slider"
-    url = "/index-slider/"
-    weight = 4
-  [[menu.main]]
-    identifier = "home-video"
-    parent = "home"
-    name = "Home Video"
-    url = "/index-video/"
-    weight = 5
 [[menu.main]]
   identifier = "about"
   name = "About"
@@ -90,7 +60,7 @@ pagerSize = 6
 [params]
 skinColor = "" #PREDEFINED COLOR SCHEMES: [ "beige", "blue", "brown", "green_light", "green", "orange", "purple", "red", "yellow_light", "yellow" ]
 dateFormat = "January 2, 2006"
-authorName = "Joé Wilson"
+authorName = "Billel Attafi"
 disqusComments = "test" #YOUR DISQUS COMMENTS SHORTNAME
 formspreeURL = "" #YOUR FORMSPREE URL
 googleAnalytics = "" #YOUR GOOGLE ANALYTICS CODE
@@ -98,8 +68,8 @@ googleAnalytics = "" #YOUR GOOGLE ANALYTICS CODE
 # Header Settings
 [params.header]
 logo_image = "images/logo.png"
-logo_text = "Joé <br />Wilson"
-logo_alt = "Joé Wilson"
+logo_text = "Billel <br />Attafi"
+logo_alt = "Billel Attafi"
 button_text = "Download CV"
 button_url = "files/Resume-Template.pdf"
 button_icon = "fas fa-download"
