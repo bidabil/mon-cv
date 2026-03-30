@@ -54,7 +54,7 @@
               {{ if not (eq .Lang $.Site.Language.Lang) }}
               <li class="menu-item lang-switch-item">
                 <a href="{{ if eq .Lang "fr" }}{{ $.Site.BaseURL }}{{ else }}{{ $.Site.BaseURL }}{{ .Lang }}/{{ end }}">
-                  <span class="lang-switch-btn" data-target="{{ .LanguageName }}">{{ .LanguageName }}</span>
+                  <span class="animated-button"><span class="lang-switch-btn" data-target="{{ .LanguageName }}">{{ .LanguageName }}</span></span>
                 </a>
               </li>
               {{ end }}

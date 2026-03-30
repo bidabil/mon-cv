@@ -8,26 +8,26 @@
   overflow: hidden;
   display: inline-block;
   line-height: 16px;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: #fff;
+  text-shadow: 0 16px 0 #007bff;
+}
+
+.lang-switch-btn em {
+  min-width: 5px;
+  display: inline-block;
+  vertical-align: middle;
+  font-style: normal;
+  backface-visibility: hidden;
   transition: transform 0.3s ease;
+  transform: translateY(0);
 }
 
-.lang-switch-btn::after {
-  content: attr(data-target);
-  position: absolute;
-  left: 0;
-  top: 16px;
-  width: 100%;
-  text-align: left;
-  color: #fff;
-}
-
-.lang-switch-item a:hover .lang-switch-btn {
-  transform: translateY(-16px);
+.lang-switch-item:hover .lang-switch-btn em {
+  transform: translateY(calc(16px * -1));
 }
 
 /* ============================================
