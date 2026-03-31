@@ -28,6 +28,10 @@
           <div class="label">{{ i18n "message" }} <strong>*</strong></div>
           <textarea name="message" placeholder="{{ i18n "yourMessage" }}"></textarea>
         </div>
+        {{ "<!-- Honeypot field for spam protection -->" | safeHTML }}
+        <div style="position: absolute; left: -9999px;" aria-hidden="true">
+          <input type="text" name="website" tabindex="-1" autocomplete="off">
+        </div>
         <div class="group-bts">
           <button type="submit" class="btn">
             <span class="animated-button"><span>{{ i18n "sendMessage" }}</span></span>

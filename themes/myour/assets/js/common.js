@@ -463,10 +463,6 @@
 		success: 'valid',
 		submitHandler: function() {
 			return true;
-
-			$("#cform").find('input[type="text"], input[type="email"], input[type="tel"], textarea').val('');
-      $('#cform').fadeOut();
-      $('.alert-success').delay(1000).fadeIn();
 		}
 	});
 

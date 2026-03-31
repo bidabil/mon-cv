@@ -1,2 +1,123 @@
 [downloadCV]
 other = "Download Resume"
+
+[home]
+other = "Home"
+
+[blog]
+other = "Blog"
+
+[blogSubtitle]
+other = "News and thoughts"
+
+[archive]
+other = "Archives"
+
+[blogPost]
+other = "Article"
+
+[all]
+other = "All"
+
+[readMore]
+other = "Read more"
+
+[by]
+other = "By"
+
+[fullName]
+other = "Full name"
+
+[yourFullName]
+other = "e.g. John Doe"
+
+[emailAddress]
+other = "Email address"
+
+[yourEmailAddress]
+other = "example@domain.com"
+
+[message]
+other = "Message"
+
+[yourMessage]
+other = "Write your message here"
+
+[sendMessage]
+other = "Send message"
+
+[viewProject]
+other = "View project"
+
+[new]
+other = "new"
+
+[search]
+other = "Search ..."
+
+[recentPosts]
+other = "Recent posts"
+
+[latestPosts]
+other = "Latest articles"
+
+[categories]
+other = "Categories"
+
+[followMe]
+other = "Follow me"
+
+[share]
+other = "Share"
+
+[shareOn]
+other = "Share on"
+
+[tags]
+other = "Tags"
+
+[comments]
+other = "Comments"
+
+[prev]
+other = "Previous"
+
+[next]
+other = "Next"
+
+[nextPost]
+other = "Next article"
+
+[prevPost]
+other = "Previous article"
+
+[nextProject]
+other = "Next project"
+
+[prevProject]
+other = "Previous project"
+
+[readingTime]
+one = "1 min read"
+other = "{{ .Count }} mins read"
+
+[successMessage]
+other = "Thank you, your message has been sent successfully."
+
+[developedBy]
+other = "Developed by"
+
+[category]
+other = "Category"
+
+[errorNum]
+other = "404"
+
+[errorTitle]
+other = "Oops!"
+
+[errorText]
+other = "The page you are looking for does not exist or has been moved."
+
+[taxonomyPageList]
+other = "Pages using term {{ .Title }}"

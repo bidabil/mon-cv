@@ -105,11 +105,6 @@ title = "GitHub"
 icon = "fab fa-github"
 url = "https://github.com/bidabil"
 weight = 2
-[[params.social]]
-title = "Twitter"
-icon = "fab fa-twitter"
-url = "https://www.twitter.com/"
-weight = 3
 
 # Sidebar
 [params.sidebar]

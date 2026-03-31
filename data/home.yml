@@ -5,20 +5,20 @@
 
 ### Hero Image 1 - 3 [ heroImage1Section, heroImage2Section, heroImage3Section ]
 hero_image1:
-  enable: true
+  enable: false
   image: "images/man.jpg"
 
 hero_image2:
-  enable: true
+  enable: false
   image: "images/man2.jpg"
 
 hero_image3:
-  enable: true
+  enable: false
   image: "images/girl3.jpg"
 
 ### Hero Video
 hero_video:
-  enable: true
+  enable: false
   video: "https://youtu.be/S4L8T2kFFck"
 
 ### Hero Slider
