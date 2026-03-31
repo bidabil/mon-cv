@@ -1,8 +1,8 @@
 /**
 *	Myour - Personal Portfolio Template (HTML)
-*	Author: beshleyua
-*	Author URL: http://themeforest.net/user/beshleyua
-*	Copyright © Myour by beshleyua. All Rights Reserved.
+*	Author: Billel Attafi
+*	Author URL: https://billelattafi.rf.gd
+*	Copyright © Billel Attafi. All Rights Reserved.
 **/
 
 ( function( $ ) {

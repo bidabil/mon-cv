@@ -36,8 +36,8 @@ Checkout the live demo [here](https://myour-hugo.netlify.com/)
 
 ## Support
 
-Have some question or technical trouble [Contact Us](https://bslthemes.com/support/)
+Have some question or technical trouble [Contact Us](https://billelattafi.rf.gd/)
 
 ## Licensing
 
-Read more about licensing here: http://themeforest.net/licenses
+

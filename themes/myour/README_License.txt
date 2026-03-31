@@ -7,4 +7,4 @@ text file.
 (2) All other parts, but not limited to the CSS code, images, and design are
 licensed according to the terms of your purchased license.
 
-Read more about licensing here: http://themeforest.net/licenses
+
