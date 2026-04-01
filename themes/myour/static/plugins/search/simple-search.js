@@ -8,6 +8,11 @@ if ( list != undefined ) {
 var maininput = document.getElementById('searchInput'); // input box for search
 var resultsAvailable = false; // Did we get any search results?
 
+// Function to escape HTML to prevent XSS
+function escapeHtml(text) {
+  return text.replace(/&/g, "&").replace(/</g, "<").replace(/>/g, ">").replace(/"/g, """).replace(/'/g, "&#039;");
+}
+
 // Load json search index if first time invoking search
 // Means we don't load json unless searches are going to happen; keep user payload small unless needed
 if( firstRun && list != undefined && maininput != undefined ) {
@@ -82,7 +87,7 @@ function executeSearch(term) {
     searchitems = '';
   } else { // build our html
     for (let item in results.slice(0,5)) { // only show first 5 results
-      searchitems = searchitems + '<li><a href="' + results[item].item.permalink + '">' + results[item].item.title + '<br/> <small>'+ results[item].item.section +'</small> — <small>' + results[item].item.date + '</small></a></li>';
+      searchitems = searchitems + '<li><a href="' + results[item].item.permalink + '">' + escapeHtml(results[item].item.title) + '<br/> <small>'+ escapeHtml(results[item].item.section) +'</small> — <small>' + escapeHtml(results[item].item.date) + '</small></a></li>';
     }
     resultsAvailable = true;
   }

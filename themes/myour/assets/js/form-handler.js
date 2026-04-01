@@ -12,22 +12,22 @@ async function handleSubmit(event) {
     }
   }).then(response => {
     if (response.ok) {
-      status.innerHTML = "Thanks for your submission!";
+      status.textContent = "Thanks for your submission!";
       status.style.display = 'block';
       form.reset()
     } else {
       response.json().then(data => {
         if (Object.hasOwn(data, 'errors')) {
-          status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+          status.textContent = data["errors"].map(error => error["message"]).join(", ");
           status.style.display = 'block';
         } else {
-          status.innerHTML = "Oops! There was a problem submitting your form";
+          status.textContent = "Oops! There was a problem submitting your form";
           status.style.display = 'block';
         }
       })
     }
   }).catch(error => {
-    status.innerHTML = "Oops! There was a problem submitting your form";
+    status.textContent = "Oops! There was a problem submitting your form";
     status.style.display = 'block';
   });
 }
