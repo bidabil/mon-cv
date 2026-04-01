@@ -119,3 +119,267 @@
   0%   { transform: scale(0.7); opacity: 0; }
   100% { transform: scale(1);   opacity: 1; }
 }
+
+/* ============================================
+   Pages Offre (cachées)
+   ============================================ */
+
+.offre-section .offre-wrap {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.offre-wrap .offre-header {
+  margin-bottom: 40px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.offre-wrap .offre-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: #fff;
+}
+
+.offre-wrap .offre-header .offre-subtitle {
+  font-size: 15px;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 16px;
+}
+
+.offre-wrap .offre-intro {
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.75);
+  border-left: 3px solid var(--active-color, #68e0cf);
+  padding-left: 16px;
+  margin: 0;
+}
+
+.offre-wrap .offre-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px;
+  padding: 28px 28px 24px;
+  margin-bottom: 24px;
+}
+
+.offre-wrap .offre-card h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.offre-wrap .offre-card .offre-card-sub {
+  font-size: 13px;
+  color: rgba(255,255,255,0.45);
+  font-style: italic;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.offre-wrap .offre-card ul {
+  padding-left: 0;
+  list-style: none;
+  margin-bottom: 16px;
+}
+
+.offre-wrap .offre-card ul li {
+  font-size: 14px;
+  color: rgba(255,255,255,0.7);
+  padding: 5px 0 5px 20px;
+  position: relative;
+}
+
+.offre-wrap .offre-card ul li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--active-color, #68e0cf);
+  font-size: 12px;
+}
+
+.offre-wrap .offre-card .offre-note {
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 20px;
+}
+
+.offre-wrap .offre-card .offre-price {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--active-color, #68e0cf);
+  margin-bottom: 16px;
+}
+
+.offre-btn {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--active-color, #68e0cf);
+  border: 1px solid var(--active-color, #68e0cf);
+  padding: 9px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+  cursor: pointer;
+  background: transparent;
+}
+
+.offre-btn:hover {
+  background: var(--active-color, #68e0cf);
+  color: #1a1a2e;
+  text-decoration: none;
+}
+
+.offre-wrap h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  margin: 40px 0 20px;
+}
+
+.offre-wrap .offre-diff-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 32px;
+}
+
+.offre-wrap .offre-diff-list li {
+  font-size: 14px;
+  color: rgba(255,255,255,0.7);
+  padding: 8px 0 8px 20px;
+  position: relative;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.offre-wrap .offre-diff-list li::before {
+  content: "✦";
+  position: absolute;
+  left: 0;
+  color: var(--active-color, #68e0cf);
+  font-size: 10px;
+  top: 10px;
+}
+
+.offre-wrap .offre-diff-list li strong {
+  color: #fff;
+}
+
+.offre-wrap .offre-modalites {
+  background: rgba(255,255,255,0.03);
+  border-radius: 6px;
+  padding: 20px 24px;
+  margin-bottom: 40px;
+}
+
+.offre-wrap .offre-modalites p {
+  font-size: 14px;
+  color: rgba(255,255,255,0.65);
+  margin: 0 0 8px;
+}
+
+.offre-wrap .offre-modalites p:last-child {
+  margin: 0;
+}
+
+.offre-wrap .offre-modalites strong {
+  color: rgba(255,255,255,0.9);
+}
+
+.offre-wrap .offre-cta-block {
+  text-align: center;
+  padding: 32px 0 0;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.offre-wrap .offre-steps {
+  counter-reset: step;
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 32px;
+}
+
+.offre-wrap .offre-steps li {
+  position: relative;
+  padding: 16px 16px 16px 52px;
+  margin-bottom: 12px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 6px;
+  font-size: 14px;
+  color: rgba(255,255,255,0.7);
+  counter-increment: step;
+}
+
+.offre-wrap .offre-steps li::before {
+  content: counter(step);
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  background: var(--active-color, #68e0cf);
+  color: #1a1a2e;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.offre-wrap .offre-steps li strong {
+  color: #fff;
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* Espacement des listes dans les sections offre */
+.offre-section .service-item .single-post-text ul {
+  padding-left: 0;
+  list-style: none !important;
+}
+.offre-section .service-item .single-post-text ul li {
+  list-style: none !important;
+  padding: 6px 0 6px 16px;
+  position: relative;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  font-size: 14px;
+  line-height: 1.6;
+}
+.offre-section .service-item .single-post-text ul li:last-child {
+  border-bottom: none;
+}
+.offre-section .service-item .single-post-text ul > li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: auto !important;
+  height: auto !important;
+  background: none !important;
+  border-radius: 0 !important;
+  color: var(--active-color, #68e0cf);
+  font-size: 13px;
+}
+
+/* Pricing natif — 3 colonnes dans les pages offre */
+.offre-section .pricing-items {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.offre-section .pricing-items .pricing-col {
+  width: 33.33%;
+}
+@media (max-width: 900px) {
+  .offre-section .pricing-items .pricing-col {
+    width: 100%;
+    margin-bottom: 24px;
+  }
+}

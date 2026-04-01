@@ -8,6 +8,9 @@ DefaultContentLanguage = "fr"
 defaultContentLanguageInSubdir = false
 ignoreLogs = ['warning-goldmark-raw-html']
 
+[markup.goldmark.renderer]
+unsafe = true
+
 [pagination]
 pagerSize = 6
 
