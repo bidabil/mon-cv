@@ -50,11 +50,11 @@
             {{ end }}
 
             {{ "<!-- language switcher -->" | safeHTML }}
-            {{ range .Site.Languages }}
+            {{ range $.AllTranslations }}
               {{ if not (eq .Lang $.Site.Language.Lang) }}
               <li class="menu-item lang-switch-item">
-                <a href="{{ if eq .Lang "fr" }}{{ $.Site.BaseURL }}{{ else }}{{ $.Site.BaseURL }}{{ .Lang }}/{{ end }}">
-                  <span class="animated-button"><span class="lang-switch-btn" data-target="{{ $.Site.Language.LanguageName }}">{{ .LanguageName }}</span></span>
+                <a href="{{ .Permalink }}">
+                  <span class="animated-button"><span class="lang-switch-btn" data-target="{{ $.Site.Language.LanguageName }}">{{ .Language.LanguageName }}</span></span>
                 </a>
               </li>
               {{ end }}

@@ -35,7 +35,11 @@
 
 /* Fix: .service-items has font-size:0 (whitespace hack) — reset ALL children */
 .service-items .service-col {
-  font-size: 14px;
+  font-size: 14px !important;
+}
+
+.service-items .service-col .service-item {
+  font-size: 14px !important;
 }
 
 /* Higher specificity (0,3,0) to override theme's .service-item .icon (0,2,0) */
@@ -55,9 +59,12 @@
 }
 
 .service-items .service-col .service-item .single-post-text {
-  font-size: 14px;
+  font-size: 14px !important;
   line-height: 1.7;
   color: rgba(255,255,255,0.7);
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 /* Hover : scale + bounce */

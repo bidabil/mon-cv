@@ -31,7 +31,7 @@
   {{ end }}
 
   {{ "<!-- Custom Animations -->" | safeHTML }}
-  <link rel="stylesheet" href="{{ "css/custom.css" | absURL }}" />
+  <link rel="stylesheet" href="{{ "css/custom.css" | absURL }}?v={{ now.Unix }}" />
 
   {{ "<!-- Favicon -->" | safeHTML }}
   <link rel="shortcut icon" href="{{ "images/favicon/favicon.ico" | absURL }}" type="image/x-icon" />
