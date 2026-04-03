@@ -31,12 +31,18 @@
     </div>
 
     {{ "<!-- info list -->" | safeHTML }}
-    <div class="info-list">
-      <ul>
-        {{ range .list }}
-        <li><strong>{{ .label }}:</strong> {{ .value }}</li>
-        {{ end }}
-      </ul>
+    <div class="info-grid">
+      {{ range .list }}
+      <div class="info-card">
+        <div class="info-card-icon">
+          <i class="{{ .icon }}"></i>
+        </div>
+        <div class="info-card-content">
+          <div class="info-card-label">{{ .label }}</div>
+          <div class="info-card-value">{{ .value }}</div>
+        </div>
+      </div>
+      {{ end }}
     </div>
 
     <div class="clear"></div>
