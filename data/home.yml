@@ -25,9 +25,10 @@ hero_video:
 hero_slider:
   enable: true
   images:
-    - "images/girl.jpg"
-    - "images/girl3.jpg"
-    - "images/girl2.jpg"
+    - "images/billel1.jpg"
+    - "images/billel2.jpg"
+    - "images/billel3.jpg"
+    - "images/billel4.jpg"
 
 ### Started [ startedSection ]
 started:
@@ -48,6 +49,7 @@ about:
   enable: true
   title: "À propos"
   subtitle: "Mon profil"
+  image: "images/billel2.jpg"
   text: "<p>Ingénieur logiciel senior avec 10+ ans d'expérience dans la conception de systèmes backend haute performance, d'architectures distribuées et de solutions géospatiales. Expert en .NET, PostgreSQL/PostGIS et Clean Architecture, reconnu pour concevoir des systèmes scalables et fiables en production. Habitué à diriger des équipes techniques et à livrer des systèmes critiques pour des grands comptes (APRR, CMA CGM, ArcelorMittal).</p><p>En parallèle, j'accompagne des structures à forts enjeux de confidentialité dans la modernisation de leur système d'information : sécurisation des données, conformité réglementaire et optimisation du parc informatique.</p>"
   list:
     - label: "Résidence"
@@ -219,7 +221,24 @@ testimonials:
 
 ### Clients [ clientSection ]
 clients:
-  enable: false
+  enable: true
+  title: "Missions"
+  subtitle: "Ils m'ont fait confiance"
+  items:
+    - image: "images/clients/davidson.svg"
+      url: "https://www.davidson.fr"
+    - image: "images/clients/nooeh.jpg"
+      url: "https://www.nooeh.com"
+    - image: "images/clients/cma-cgm.svg"
+      url: "https://www.cma-cgm.com"
+    - image: "images/clients/arcelormittal.svg"
+      url: "https://corporate.arcelormittal.com"
+    - image: "images/clients/my-kiwi.jpg"
+      url: "https://www.mykiwi.io"
+    - image: "images/clients/aprr.png"
+      url: "https://www.aprr.fr"
+    - image: "images/clients/it-systemes.jpg"
+      url: "https://www.it-systemes.fr"
 
 ### Portfolio [ portfolioSection ]
 portfolio:

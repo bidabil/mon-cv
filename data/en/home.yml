@@ -20,9 +20,10 @@ hero_video:
 hero_slider:
   enable: true
   images:
-    - "images/girl.jpg"
-    - "images/girl3.jpg"
-    - "images/girl2.jpg"
+    - "images/billel1.jpg"
+    - "images/billel2.jpg"
+    - "images/billel3.jpg"
+    - "images/billel4.jpg"
 
 ### Started
 started:
@@ -43,6 +44,7 @@ about:
   enable: true
   title: "About"
   subtitle: "My profile"
+  image: "images/billel2.jpg"
   text: "<p>Senior software engineer with 10+ years of experience designing high-performance backend systems, distributed architectures, and geospatial solutions. Expert in .NET, PostgreSQL/PostGIS and Clean Architecture — known for building scalable, production-grade systems for major accounts (APRR, CMA CGM, ArcelorMittal).</p><p>I also support organizations with high confidentiality requirements in modernizing their information systems: data security, regulatory compliance, and IT infrastructure optimization.</p>"
   list:
     - label: "Location"
@@ -214,7 +216,24 @@ testimonials:
 
 ### Clients
 clients:
-  enable: false
+  enable: true
+  title: "Missions"
+  subtitle: "They trusted me"
+  items:
+    - image: "images/clients/davidson.svg"
+      url: "https://www.davidson.fr"
+    - image: "images/clients/nooeh.jpg"
+      url: "https://www.nooeh.com"
+    - image: "images/clients/cma-cgm.svg"
+      url: "https://www.cma-cgm.com"
+    - image: "images/clients/arcelormittal.svg"
+      url: "https://corporate.arcelormittal.com"
+    - image: "images/clients/my-kiwi.jpg"
+      url: "https://www.mykiwi.io"
+    - image: "images/clients/aprr.png"
+      url: "https://www.aprr.fr"
+    - image: "images/clients/it-systemes.jpg"
+      url: "https://www.it-systemes.fr"
 
 ### Portfolio
 portfolio:

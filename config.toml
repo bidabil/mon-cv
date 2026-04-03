@@ -9,7 +9,7 @@ defaultContentLanguageInSubdir = false
 ignoreLogs = ['warning-goldmark-raw-html']
 
 [markup.goldmark.renderer]
-unsafe = false
+unsafe = true
 
 [pagination]
 pagerSize = 6

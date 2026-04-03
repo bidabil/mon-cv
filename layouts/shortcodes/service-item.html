@@ -1,0 +1,7 @@
+<div class="service-col">
+  <div class="service-item">
+    <div class="icon"><i class="{{ .Get "icon" }}"></i></div>
+    <div class="name">{{ .Get "name" }}</div>
+    <div class="single-post-text">{{ .Inner | markdownify }}</div>
+  </div>
+</div>

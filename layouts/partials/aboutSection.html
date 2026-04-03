@@ -14,7 +14,16 @@
 
     {{ "<!-- text -->" | safeHTML }}
     <div class="cols">
+      {{ if .image }}
+      <div class="col col-d-3">
+        <div class="about-image">
+          <img src="{{ .image | absURL }}" alt="Billel Attafi" />
+        </div>
+      </div>
+      <div class="col col-d-9">
+      {{ else }}
       <div class="col col-full">
+      {{ end }}
         <div class="single-post-text">
           {{ .text | safeHTML }}
         </div>
