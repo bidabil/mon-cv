@@ -44,14 +44,16 @@ about:
   enable: true
   title: "About"
   subtitle: "My profile"
-  image: "images/billel2.jpg"
   text: "<p>Senior software engineer with 10+ years of experience designing high-performance backend systems, distributed architectures, and geospatial solutions. Expert in .NET, PostgreSQL/PostGIS and Clean Architecture — known for building scalable, production-grade systems for major accounts (APRR, CMA CGM, ArcelorMittal).</p><p>I also support organizations with high confidentiality requirements in modernizing their information systems: data security, regulatory compliance, and IT infrastructure optimization.</p>"
   list:
     - label: "Location"
       value: "Marseille, France"
 
-    - label: "Freelance"
-      value: "Available"
+    - label: "Availability"
+      value: "Immediate — Full remote, anywhere in France"
+
+    - label: "Billing"
+      value: "Umbrella company · Occasional on-site travel possible"
 
     - label: "Phone"
       value: "+33 7 48 24 41 37"
@@ -253,8 +255,8 @@ contacts:
     - label: "Location:"
       value: "Marseille, France"
 
-    - label: "Freelance:"
-      value: "Available"
+    - label: "Availability:"
+      value: "Full remote — France-wide · Umbrella company billing"
 
     - label: "Phone:"
       value: "+33 7 48 24 41 37"

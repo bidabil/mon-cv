@@ -33,11 +33,31 @@
    Animated Icons — Service Section
    ============================================ */
 
-/* Base transition on all service icons */
-.service-item .icon i {
+/* Fix: .service-items has font-size:0 (whitespace hack) — reset ALL children */
+.service-items .service-col {
+  font-size: 14px;
+}
+
+/* Higher specificity (0,3,0) to override theme's .service-item .icon (0,2,0) */
+.service-items .service-col .service-item .icon {
+  font-size: 32px;
+}
+
+.service-items .service-col .service-item .icon i {
+  font-size: 32px;
   display: inline-block;
   transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
               color 0.3s ease;
+}
+
+.service-items .service-col .service-item .name {
+  font-size: 18px;
+}
+
+.service-items .service-col .service-item .single-post-text {
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.7);
 }
 
 /* Hover : scale + bounce */

@@ -49,14 +49,16 @@ about:
   enable: true
   title: "À propos"
   subtitle: "Mon profil"
-  image: "images/billel2.jpg"
   text: "<p>Ingénieur logiciel senior avec 10+ ans d'expérience dans la conception de systèmes backend haute performance, d'architectures distribuées et de solutions géospatiales. Expert en .NET, PostgreSQL/PostGIS et Clean Architecture, reconnu pour concevoir des systèmes scalables et fiables en production. Habitué à diriger des équipes techniques et à livrer des systèmes critiques pour des grands comptes (APRR, CMA CGM, ArcelorMittal).</p><p>En parallèle, j'accompagne des structures à forts enjeux de confidentialité dans la modernisation de leur système d'information : sécurisation des données, conformité réglementaire et optimisation du parc informatique.</p>"
   list:
     - label: "Résidence"
       value: "Marseille, France"
 
-    - label: "Freelance"
-      value: "Disponible"
+    - label: "Disponibilité"
+      value: "Immédiate — Full remote, France entière"
+
+    - label: "Facturation"
+      value: "Portage salarial · Déplacements ponctuels possibles"
 
     - label: "Téléphone"
       value: "+33 7 48 24 41 37"
@@ -258,8 +260,8 @@ contacts:
     - label: "Résidence:"
       value: "Marseille, France"
 
-    - label: "Freelance:"
-      value: "Disponible"
+    - label: "Disponibilité:"
+      value: "Full remote — France entière · Portage salarial"
 
     - label: "Téléphone:"
       value: "+33 7 48 24 41 37"
