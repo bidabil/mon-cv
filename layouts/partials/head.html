@@ -91,6 +91,9 @@
   }
   </script>
 
+  {{ "<!-- Font Awesome preload (solid — most used subset) -->" | safeHTML }}
+  <link rel="preload" href="{{ "plugins/font-awesome/webfonts/fa-solid-900.woff2" | absURL }}" as="font" type="font/woff2" crossorigin="anonymous" />
+
   {{ "<!-- Google Fonts Preconnect -->" | safeHTML }}
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
