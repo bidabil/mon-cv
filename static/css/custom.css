@@ -300,4 +300,32 @@
   .info-grid {
     grid-template-columns: 1fr;
   }
-} 
+}
+
+/* ============================================
+   Contact section — fix text overflow
+   ============================================ */
+
+.contact-info .info-list ul li {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+.contact-info .info-list ul li strong {
+  display: inline;
+  white-space: nowrap;
+}
+
+@media (max-width: 720px) {
+  .contact-info .info-list ul li {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .contact-info .info-list ul li strong {
+    white-space: normal;
+  }
+}

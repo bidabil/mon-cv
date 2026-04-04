@@ -20,9 +20,7 @@ hero_video:
 hero_slider:
   enable: true
   images:
-    - "images/billel1.jpg"
     - "images/billel2.jpg"
-    - "images/billel3.jpg"
     - "images/billel4.jpg"
 
 ### Started
@@ -218,7 +216,7 @@ testimonials:
 
 ### Clients
 clients:
-  enable: true
+  enable: false
   title: "Missions"
   subtitle: "They trusted me"
   items:
@@ -239,7 +237,7 @@ clients:
 
 ### Portfolio
 portfolio:
-  enable: true
+  enable: false
   title: "Portfolio"
   subtitle: "Key projects"
 
