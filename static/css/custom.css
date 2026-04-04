@@ -303,6 +303,14 @@
 }
 
 /* ============================================
+   Contact section — hide success message by default
+   ============================================ */
+
+#formAlertSuccess {
+  display: none;
+}
+
+/* ============================================
    Contact section — fix text overflow
    ============================================ */
 
