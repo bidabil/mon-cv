@@ -18,15 +18,15 @@
       <form id="cform" action="{{ $action }}" method="post">
         <div class="group-val">
           <div class="label">{{ i18n "fullName" }} <strong>*</strong></div>
-            <input type="text" name="name" placeholder="{{ i18n "yourFullName" }}" />
+            <input type="text" name="name" placeholder="{{ i18n "yourFullName" }}" required />
         </div>
         <div class="group-val">
           <div class="label">{{ i18n "emailAddress" }} <strong>*</strong></div>
-          <input type="email" name="email" placeholder="{{ i18n "yourEmailAddress" }}" />
+          <input type="email" name="email" placeholder="{{ i18n "yourEmailAddress" }}" required />
         </div>
         <div class="group-val">
           <div class="label">{{ i18n "message" }} <strong>*</strong></div>
-          <textarea name="message" placeholder="{{ i18n "yourMessage" }}"></textarea>
+          <textarea name="message" placeholder="{{ i18n "yourMessage" }}" required></textarea>
         </div>
         {{ "<!-- Honeypot field for spam protection -->" | safeHTML }}
         <div style="position: absolute; left: -9999px;" aria-hidden="true">
