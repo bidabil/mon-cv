@@ -42,7 +42,7 @@
         <div class="box-item">
           <div class="image">
             <a href="#gallery-{{ .File.UniqueID }}" class="has-popup-gallery">
-              <img src="{{ .Params.image | absURL }}" alt="{{ .Title }}" />
+              <img src="{{ .Params.image | absURL }}" alt="{{ .Title }}" loading="lazy" />
               <span class="info">
                 <span class="centrize full-width">
                   <span class="vertical-center">
@@ -70,7 +70,7 @@
         <div class="box-item">
           <div class="image">
             <a href="{{ .Params.video }}" class="has-popup-video">
-              <img src="{{ .Params.image | absURL }}" alt="{{ .Title }}" />
+              <img src="{{ .Params.image | absURL }}" alt="{{ .Title }}" loading="lazy" />
               <span class="info">
                 <span class="centrize full-width">
                   <span class="vertical-center">
@@ -93,7 +93,7 @@
         <div class="box-item">
           <div class="image">
             <a href="{{ .Params.image | absURL }}" class="has-popup-image">
-              <img src="{{ .Params.image | absURL }}" alt="{{ .Title }}" />
+              <img src="{{ .Params.image | absURL }}" alt="{{ .Title }}" loading="lazy" />
               <span class="info">
                 <span class="centrize full-width">
                   <span class="vertical-center">
@@ -116,7 +116,7 @@
         <div class="box-item">
           <div class="image">
             <a href="{{ .Params.music }}" class="has-popup-music">
-              <img src="{{ .Params.image | absURL }}" alt="{{ .Title }}" />
+              <img src="{{ .Params.image | absURL }}" alt="{{ .Title }}" loading="lazy" />
               <span class="info">
                 <span class="centrize full-width">
                   <span class="vertical-center">
@@ -139,7 +139,7 @@
         <div class="box-item">
           <div class="image">
             <a href="{{ .Params.link }}" class="has-popup-link" target="_blank" rel="noopener noreferrer">
-              <img src="{{ .Params.image | absURL }}" alt="{{ .Title }}" />
+              <img src="{{ .Params.image | absURL }}" alt="{{ .Title }}" loading="lazy" />
               <span class="info">
                 <span class="centrize full-width">
                   <span class="vertical-center">
@@ -162,7 +162,7 @@
         <div class="box-item">
           <div class="image">
             <a href="#popup-{{ .File.UniqueID }}" class="has-popup-media">
-              <img src="{{ .Params.image | absURL }}" alt="{{ .Title }}" />
+              <img src="{{ .Params.image | absURL }}" alt="{{ .Title }}" loading="lazy" />
               <span class="info">
                 <span class="centrize full-width">
                   <span class="vertical-center">
@@ -179,7 +179,7 @@
           <div id="popup-{{ .File.UniqueID }}" class="popup-box mfp-fade mfp-hide">
             <div class="content">
               <div class="image">
-                <img src="{{ .Params.image | absURL }}" alt="{{ .Title }}" />
+                <img src="{{ .Params.image | absURL }}" alt="{{ .Title }}" loading="lazy" />
               </div>
               <div class="desc">
                 <div class="category">{{ .Params.category }}</div>
