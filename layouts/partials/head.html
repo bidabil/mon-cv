@@ -6,10 +6,94 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="HandheldFriendly" content="true">
+  <meta name="theme-color" content="#1a1a2e">
   <meta name="author" content="Billel Attafi" />
-  {{ if .Params.noindex }}<meta name="robots" content="noindex, nofollow">{{ end }}
+  {{ with .Site.Params.googleSiteVerification }}<meta name="google-site-verification" content="{{ . }}" />{{ end }}
+  {{ if .Params.noindex }}<meta name="robots" content="noindex, nofollow">{{ else }}<meta name="robots" content="index, follow">{{ end }}
 
-  {{ "<!-- Google Fonts -->" | safeHTML }}
+  {{ "<!-- Description & Keywords -->" | safeHTML }}
+  {{ $desc := .Site.Params.description }}
+  {{ if $desc }}<meta name="description" content="{{ $desc }}">{{ end }}
+  {{ if eq .Site.Language.Lang "en" }}
+  <meta name="keywords" content="Senior .NET Engineer, Backend Developer, C#, Clean Architecture, PostgreSQL, PostGIS, DevSecOps, Microservices, Docker, Azure DevOps, Freelance, Marseille, France">
+  {{ else }}
+  <meta name="keywords" content="Ingénieur .NET Senior, Développeur Backend, C#, Clean Architecture, PostgreSQL, PostGIS, DevSecOps, Microservices, Docker, Azure DevOps, Freelance, Marseille, France">
+  {{ end }}
+
+  {{ "<!-- Canonical -->" | safeHTML }}
+  <link rel="canonical" href="{{ .Permalink }}" />
+
+  {{ "<!-- Open Graph -->" | safeHTML }}
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="{{ .Site.Title }}" />
+  <meta property="og:title" content="{{ .Title }}" />
+  {{ if $desc }}<meta property="og:description" content="{{ $desc }}" />{{ end }}
+  <meta property="og:url" content="{{ .Permalink }}" />
+  <meta property="og:image" content="{{ "images/billel2.jpg" | absURL }}" />
+  <meta property="og:locale" content="{{ .Site.Language.Lang }}" />
+  {{ range .AllTranslations }}{{ if ne .Language.Lang $.Site.Language.Lang }}
+  <meta property="og:locale:alternate" content="{{ .Language.Lang }}" />
+  {{ end }}{{ end }}
+
+  {{ "<!-- Twitter Card -->" | safeHTML }}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{{ .Title }}" />
+  {{ if $desc }}<meta name="twitter:description" content="{{ $desc }}" />{{ end }}
+  <meta name="twitter:image" content="{{ "images/billel2.jpg" | absURL }}" />
+
+  {{ "<!-- hreflang -->" | safeHTML }}
+  {{ range .AllTranslations }}
+  <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" />
+  {{ end }}
+
+  {{ "<!-- JSON-LD Person Schema -->" | safeHTML }}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Billel Abdelrezak ATTAFI",
+    "givenName": "Billel",
+    "familyName": "Attafi",
+    "jobTitle": {{ if eq .Site.Language.Lang "en" }}"Senior Software Engineer | Backend & Platform .NET"{{ else }}"Ingénieur Logiciel Senior | Backend & Platform .NET"{{ end }},
+    "description": {{ if eq .Site.Language.Lang "en" }}"Senior software engineer with 10+ years of experience building high-performance backend systems, distributed architectures and geospatial solutions in .NET."{{ else }}"Ingénieur logiciel senior avec 10+ ans d'expérience dans la conception de systèmes backend haute performance et d'architectures distribuées en .NET."{{ end }},
+    "url": "{{ .Site.BaseURL }}",
+    "email": "contact@billelattafi.fr",
+    "telephone": "+33748244137",
+    "image": "{{ "images/billel2.jpg" | absURL }}",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Marseille",
+      "addressRegion": "Provence-Alpes-Côte d'Azur",
+      "addressCountry": "FR"
+    },
+    "nationality": {
+      "@type": "Country",
+      "name": "France"
+    },
+    "sameAs": [
+      "https://linkedin.com/in/billelattafi",
+      "https://github.com/bidabil"
+    ],
+    "knowsAbout": [".NET", "C#", "ASP.NET Core", "Clean Architecture", "Domain-Driven Design", "PostgreSQL", "PostGIS", "DevSecOps", "RabbitMQ", "Microservices", "Docker", "Azure DevOps", "CI/CD"],
+    "hasOccupation": {
+      "@type": "Occupation",
+      "name": {{ if eq .Site.Language.Lang "en" }}"Software Engineer"{{ else }}"Ingénieur Logiciel"{{ end }},
+      "occupationLocation": {
+        "@type": "City",
+        "name": "Marseille"
+      },
+      "skills": ".NET, C#, Clean Architecture, PostgreSQL, PostGIS, DevSecOps, Microservices"
+    },
+    "worksFor": {
+      "@type": "Organization",
+      "name": {{ if eq .Site.Language.Lang "en" }}"Freelance — Available for missions"{{ else }}"Freelance — Disponible pour missions"{{ end }}
+    }
+  }
+  </script>
+
+  {{ "<!-- Google Fonts Preconnect -->" | safeHTML }}
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Mr+Dafoe&display=swap" rel="stylesheet">
 

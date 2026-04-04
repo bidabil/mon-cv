@@ -73,9 +73,17 @@ pagerSize = 6
 skinColor = ""
 dateFormat = "January 2, 2006"
 authorName = "Billel Attafi"
+description = "Ingénieur logiciel senior basé à Marseille — 10+ ans d'expérience en .NET, Clean Architecture, PostgreSQL/PostGIS et DevSecOps. Disponible pour missions freelance."
 disqusComments = ""
 formspreeURL = ""
 googleAnalytics = ""
+googleSiteVerification = "UOOkszk6Pdzb7uRI-kEZkRRaNYcBUMxkEKtIubJgVcM"
+
+[languages.fr.params]
+description = "Ingénieur logiciel senior basé à Marseille — 10+ ans d'expérience en .NET, Clean Architecture, PostgreSQL/PostGIS et DevSecOps. Disponible pour missions freelance."
+
+[languages.en.params]
+description = "Senior software engineer based in Marseille — 10+ years of experience in .NET, Clean Architecture, PostgreSQL/PostGIS and DevSecOps. Available for freelance missions."
 
 # Header Settings
 [params.header]
