@@ -59,12 +59,17 @@
   vertical-align: middle;
   font-style: normal;
   backface-visibility: hidden;
-  transition: transform 0.3s ease;
   transform: translateY(0);
 }
 
-.lang-switch-item:hover .lang-switch-btn em {
-  transform: translateY(-16px);
+@media (prefers-reduced-motion: no-preference) {
+  .lang-switch-btn em {
+    transition: transform 0.3s ease;
+  }
+
+  .lang-switch-item:hover .lang-switch-btn em {
+    transform: translateY(-16px);
+  }
 }
 
 /* ============================================
@@ -279,13 +284,22 @@
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 10px;
-  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .info-card:hover {
   background: rgba(255, 255, 255, 0.06);
   border-color: var(--active-color, #68e0cf);
-  transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .info-card {
+    transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .info-card:hover {
+    transform: translateY(-2px);
+  }
 }
 
 .info-card-icon {

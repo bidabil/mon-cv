@@ -11,14 +11,10 @@
   {{ with .Site.Params.googleSiteVerification }}<meta name="google-site-verification" content="{{ . }}" />{{ end }}
   {{ if .Params.noindex }}<meta name="robots" content="noindex, nofollow">{{ else }}<meta name="robots" content="index, follow">{{ end }}
 
-  {{ "<!-- Description & Keywords -->" | safeHTML }}
-  {{ $desc := cond (ne .Params.description "") .Params.description .Site.Params.description }}
+  {{ "<!-- Description -->" | safeHTML }}
+  {{ $desc := .Site.Params.description }}
+  {{ with .Params.description }}{{ $desc = . }}{{ end }}
   {{ if $desc }}<meta name="description" content="{{ $desc }}">{{ end }}
-  {{ if eq .Site.Language.Lang "en" }}
-  <meta name="keywords" content="Senior .NET Engineer, Backend Developer, C#, Clean Architecture, PostgreSQL, PostGIS, DevSecOps, Microservices, Docker, Azure DevOps, Freelance, Marseille, France">
-  {{ else }}
-  <meta name="keywords" content="Ingénieur .NET Senior, Développeur Backend, C#, Clean Architecture, PostgreSQL, PostGIS, DevSecOps, Microservices, Docker, Azure DevOps, Freelance, Marseille, France">
-  {{ end }}
 
   {{ "<!-- Canonical -->" | safeHTML }}
   <link rel="canonical" href="{{ .Permalink }}" />

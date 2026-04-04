@@ -246,8 +246,10 @@
 		Menu on Mobile
 	*/
 	$('header').on('click', '.menu-btn', function(){
+		var $btn = $(this);
 		if($('header').hasClass('active')){
 			$('header').removeClass('active');
+			$btn.attr('aria-expanded', 'false');
 			$('.footer .soc').fadeIn();
 			$('body').addClass('loaded');
 			if($('.video-bg').length) {
@@ -255,6 +257,7 @@
 			}
 		} else {
 			$('header').addClass('active');
+			$btn.attr('aria-expanded', 'true');
 			$('.footer .soc').hide();
 			$('body').removeClass('loaded');
 			$('body').removeClass('background-enabled');
