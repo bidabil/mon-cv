@@ -1,1 +1,11 @@
 ErrorDocument 404 /404.html
+
+# Allow search engine bots
+SetEnvIfNoCase User-Agent "Googlebot" allow_bot
+SetEnvIfNoCase User-Agent "Googlebot-Image" allow_bot
+SetEnvIfNoCase User-Agent "Bingbot" allow_bot
+SetEnvIfNoCase User-Agent "bingbot" allow_bot
+SetEnvIfNoCase User-Agent "Slurp" allow_bot
+SetEnvIfNoCase User-Agent "DuckDuckBot" allow_bot
+Order deny,allow
+Allow from env=allow_bot
