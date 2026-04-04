@@ -86,14 +86,31 @@ givenName      = "Billel"
 familyName     = "Attafi"
 email          = "contact@billelattafi.fr"
 telephone      = "+33748244137"
-linkedin       = "https://linkedin.com/in/billelattafi"
-github         = "https://github.com/bidabil"
 
 [params.person.address]
 locality       = "Marseille"
 region         = "Provence-Alpes-Côte d'Azur"
 country        = "FR"
 countryName    = "France"
+
+[params.person.jobTitle]
+fr = "Ingénieur Logiciel Senior | Backend & Platform .NET"
+en = "Senior Software Engineer | Backend & Platform .NET"
+
+[params.person.description]
+fr = "Ingénieur logiciel senior avec 10+ ans d'expérience dans la conception de systèmes backend haute performance et d'architectures distribuées en .NET."
+en = "Senior software engineer with 10+ years of experience building high-performance backend systems, distributed architectures and geospatial solutions in .NET."
+
+[params.person.worksFor]
+fr = "Freelance — Disponible pour missions"
+en = "Freelance — Available for missions"
+
+[params.person.occupation]
+fr = "Ingénieur Logiciel"
+en = "Software Engineer"
+
+knowsAbout     = [".NET", "C#", "ASP.NET Core", "Clean Architecture", "Domain-Driven Design", "PostgreSQL", "PostGIS", "DevSecOps", "RabbitMQ", "Microservices", "Docker", "Azure DevOps", "CI/CD"]
+skills         = ".NET, C#, Clean Architecture, PostgreSQL, PostGIS, DevSecOps, Microservices"
 
 # OG Image — single source of truth
 [params.ogImage]

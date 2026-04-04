@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#1a1a2e">
-  <meta name="author" content="Billel Attafi" />
+  <meta name="author" content="{{ .Site.Params.authorName }}" />
   {{ with .Site.Params.googleSiteVerification }}<meta name="google-site-verification" content="{{ . }}" />{{ end }}
   {{ if .Params.noindex }}<meta name="robots" content="noindex, nofollow">{{ else }}<meta name="robots" content="index, follow">{{ end }}
 
@@ -49,6 +49,9 @@
 
   {{ "<!-- JSON-LD Person Schema -->" | safeHTML }}
   {{ $p := .Site.Params.person }}
+  {{ $lang := .Site.Language.Lang }}
+  {{ $sameAs := slice }}
+  {{ range .Site.Params.social }}{{ $sameAs = $sameAs | append .url }}{{ end }}
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -56,8 +59,8 @@
     "name": "{{ $p.fullName }}",
     "givenName": "{{ $p.givenName }}",
     "familyName": "{{ $p.familyName }}",
-    "jobTitle": {{ if eq .Site.Language.Lang "en" }}"Senior Software Engineer | Backend & Platform .NET"{{ else }}"Ingénieur Logiciel Senior | Backend & Platform .NET"{{ end }},
-    "description": {{ if eq .Site.Language.Lang "en" }}"Senior software engineer with 10+ years of experience building high-performance backend systems, distributed architectures and geospatial solutions in .NET."{{ else }}"Ingénieur logiciel senior avec 10+ ans d'expérience dans la conception de systèmes backend haute performance et d'architectures distribuées en .NET."{{ end }},
+    "jobTitle": {{ index $p.jobTitle $lang | jsonify }},
+    "description": {{ index $p.description $lang | jsonify }},
     "url": "{{ .Site.BaseURL }}",
     "email": "{{ $p.email }}",
     "telephone": "{{ $p.telephone }}",
@@ -72,23 +75,20 @@
       "@type": "Country",
       "name": "{{ $p.address.countryName }}"
     },
-    "sameAs": [
-      "{{ $p.linkedin }}",
-      "{{ $p.github }}"
-    ],
-    "knowsAbout": [".NET", "C#", "ASP.NET Core", "Clean Architecture", "Domain-Driven Design", "PostgreSQL", "PostGIS", "DevSecOps", "RabbitMQ", "Microservices", "Docker", "Azure DevOps", "CI/CD"],
+    "sameAs": {{ $sameAs | jsonify }},
+    "knowsAbout": {{ $p.knowsAbout | jsonify }},
     "hasOccupation": {
       "@type": "Occupation",
-      "name": {{ if eq .Site.Language.Lang "en" }}"Software Engineer"{{ else }}"Ingénieur Logiciel"{{ end }},
+      "name": {{ index $p.occupation $lang | jsonify }},
       "occupationLocation": {
         "@type": "City",
         "name": "{{ $p.address.locality }}"
       },
-      "skills": ".NET, C#, Clean Architecture, PostgreSQL, PostGIS, DevSecOps, Microservices"
+      "skills": "{{ $p.skills }}"
     },
     "worksFor": {
       "@type": "Organization",
-      "name": {{ if eq .Site.Language.Lang "en" }}"Freelance — Available for missions"{{ else }}"Freelance — Disponible pour missions"{{ end }}
+      "name": {{ index $p.worksFor $lang | jsonify }}
     }
   }
   </script>
@@ -123,7 +123,6 @@
   <link rel="stylesheet" href="{{ $custom.Permalink }}" integrity="{{ $custom.Data.Integrity }}" crossorigin="anonymous" />
 
   {{ "<!-- Favicon -->" | safeHTML }}
-  <link rel="shortcut icon" href="{{ "images/favicon/favicon.ico" | absURL }}" type="image/x-icon" />
   <link rel="icon" href="{{ "images/favicon/favicon.ico" | absURL }}" type="image/x-icon" />
 
   {{ with site.Params.googleAnalytics }}
