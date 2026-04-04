@@ -37,15 +37,10 @@ pagerSize = 6
       url = "#section-experience"
       weight = 3
     [[languages.fr.menu.main]]
-      identifier = "portfolio"
-      name = "Portfolio"
-      url = "#section-portfolio"
-      weight = 4
-    [[languages.fr.menu.main]]
       identifier = "contacts"
       name = "Contact"
       url = "#section-contacts"
-      weight = 5
+      weight = 4
 
   [languages.en]
     languageName = "EN"
@@ -68,15 +63,10 @@ pagerSize = 6
       url = "#section-experience"
       weight = 3
     [[languages.en.menu.main]]
-      identifier = "portfolio"
-      name = "Portfolio"
-      url = "#section-portfolio"
-      weight = 4
-    [[languages.en.menu.main]]
       identifier = "contacts"
       name = "Contact"
       url = "#section-contacts"
-      weight = 5
+      weight = 4
 
 # Main Settings
 [params]
