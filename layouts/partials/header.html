@@ -15,7 +15,7 @@
   <a href="#" class="menu-btn"><span></span></a>
 
   {{ "<!-- download cv button -->" | safeHTML }}
-  {{ $cvURL := cond (eq $.Site.Language.Lang "en") "files/Billel-Attafi-Senior-NET-Engineer-EN.pdf" "files/Billel-Attafi-Senior-NET-Engineer-FR.pdf" }}
+  {{ $cvURL := cond (eq $.Site.Language.Lang "en") ("files/Billel-Attafi-Senior-NET-Engineer-EN.pdf" | absURL) ("files/Billel-Attafi-Senior-NET-Engineer-FR.pdf" | absURL) }}
   <a href="{{ $cvURL }}" class="btn download-cv-btn" target="_blank" {{ if $header.button_download }} download{{ end }}>
     <span class="animated-button"><span>{{ i18n "downloadCV" }}</span></span>
     <i class="icon {{ $header.button_icon }}"></i>
