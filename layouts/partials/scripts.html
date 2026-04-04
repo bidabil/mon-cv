@@ -24,5 +24,3 @@
 {{ $script := resources.Get "js/common.js" | minify }}
 <script src="{{ $script.Permalink }}"></script>
 
-{{ "<!-- Custom form validation fix -->" | safeHTML }}
-<script src="{{ "js/form-fix.js" | absURL }}"></script>
