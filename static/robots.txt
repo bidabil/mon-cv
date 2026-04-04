@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://billelattafi.rf.gd/sitemap.xml
+Sitemap: https://billelattafi.fr/sitemap.xml
