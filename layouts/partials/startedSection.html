@@ -3,7 +3,7 @@
 {{ if .enable }}
 
 {{ "<!-- Section Started -->" | safeHTML }}
-<div class="section started" id="section-started">
+<section class="section started" id="section-started">
   <div class="centrize full-width">
     <div class="vertical-center">
       {{ "<!-- title -->" | safeHTML }}
@@ -32,19 +32,19 @@
         {{ "<!-- button -->" | safeHTML }}
         <a href="{{ .button.link }}" class="btn">
           <span class="animated-button"><span>{{ .button.text }}</span></span>
-          <i class="icon fas fa-chevron-right"></i>
+          <i class="icon fas fa-chevron-right" aria-hidden="true"></i>
         </a>
 
         {{ "<!-- mosue button -->" | safeHTML }}
         <a href="#" class="btn mouse-btn" style="display: none;">
-          <i class="icon fas fa-chevron-down"></i>
+          <i class="icon fas fa-chevron-down" aria-hidden="true"></i>
         </a>
 
       </div>
 
     </div>
   </div>
-</div>
+</section>
 
 {{ end }}
 {{ end }}

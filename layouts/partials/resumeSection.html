@@ -3,12 +3,12 @@
 {{ if .enable }}
 
 {{ "<!-- Section Resume -->" | safeHTML }}
-<div class="section resume" id="section-experience">
+<section class="section resume" id="section-experience">
   <div class="content">
 
     {{ "<!-- title -->" | safeHTML }}
     <div class="titles">
-      <div class="title">{{ .experience.title }}</div>
+      <h2 class="title">{{ .experience.title }}</h2>
       <div class="subtitle">{{ .experience.subtitle }}</div>
     </div>
 
@@ -32,22 +32,22 @@
 
       {{ "<!-- navigation -->" | safeHTML }}
       <div class="navs">
-        <span class="prev fas fa-chevron-left"></span>
-        <span class="next fas fa-chevron-right"></span>
+        <span class="prev fas fa-chevron-left" role="button" tabindex="0" aria-label="Précédent"></span>
+        <span class="next fas fa-chevron-right" role="button" tabindex="0" aria-label="Suivant"></span>
       </div>
 
     </div>
 
   </div>
-</div>
+</section>
 
 {{ "<!-- Section Resume -->" | safeHTML }}
-<div class="section resume" id="section-education">
+<section class="section resume" id="section-education">
   <div class="content">
 
     {{ "<!-- title -->" | safeHTML }}
     <div class="titles">
-      <div class="title">{{ .education.title }}</div>
+      <h2 class="title">{{ .education.title }}</h2>
       <div class="subtitle">{{ .education.subtitle }}</div>
     </div>
 
@@ -71,23 +71,23 @@
 
       {{ "<!-- navigation -->" | safeHTML }}
       <div class="navs">
-        <span class="prev fas fa-chevron-left"></span>
-        <span class="next fas fa-chevron-right"></span>
+        <span class="prev fas fa-chevron-left" role="button" tabindex="0" aria-label="Précédent"></span>
+        <span class="next fas fa-chevron-right" role="button" tabindex="0" aria-label="Suivant"></span>
       </div>
 
     </div>
 
   </div>
-</div>
+</section>
 
 {{ if .projects }}
 {{ "<!-- Section Resume Projects -->" | safeHTML }}
-<div class="section resume" id="section-projects">
+<section class="section resume" id="section-projects">
   <div class="content">
 
     {{ "<!-- title -->" | safeHTML }}
     <div class="titles">
-      <div class="title">{{ .projects.title }}</div>
+      <h2 class="title">{{ .projects.title }}</h2>
       <div class="subtitle">{{ .projects.subtitle }}</div>
     </div>
 
@@ -111,14 +111,14 @@
 
       {{ "<!-- navigation -->" | safeHTML }}
       <div class="navs">
-        <span class="prev fas fa-chevron-left"></span>
-        <span class="next fas fa-chevron-right"></span>
+        <span class="prev fas fa-chevron-left" role="button" tabindex="0" aria-label="Précédent"></span>
+        <span class="next fas fa-chevron-right" role="button" tabindex="0" aria-label="Suivant"></span>
       </div>
 
     </div>
 
   </div>
-</div>
+</section>
 {{ end }}
 
 {{ end }}

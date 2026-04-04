@@ -4,12 +4,12 @@
 {{ if .enable }}
 
 {{ "<!-- Works -->" | safeHTML }}
-<div class="section works" id="section-portfolio">
+<section class="section works" id="section-portfolio">
   <div class="content">
 
     {{ "<!-- title -->" | safeHTML }}
     <div class="titles">
-      <div class="title">{{ .title }}</div>
+      <h2 class="title">{{ .title }}</h2>
       <div class="subtitle">{{ .subtitle }}</div>
     </div>
 
@@ -46,7 +46,7 @@
               <span class="info">
                 <span class="centrize full-width">
                   <span class="vertical-center">
-                    <i class="icon fas fa-images"></i>
+                    <i class="icon fas fa-images" aria-hidden="true"></i>
                   </span>
                 </span>
               </span>
@@ -74,7 +74,7 @@
               <span class="info">
                 <span class="centrize full-width">
                   <span class="vertical-center">
-                    <i class="icon fas fa-video"></i>
+                    <i class="icon fas fa-video" aria-hidden="true"></i>
                   </span>
                 </span>
               </span>
@@ -97,7 +97,7 @@
               <span class="info">
                 <span class="centrize full-width">
                   <span class="vertical-center">
-                    <i class="icon fas fa-image"></i>
+                    <i class="icon fas fa-image" aria-hidden="true"></i>
                   </span>
                 </span>
               </span>
@@ -120,7 +120,7 @@
               <span class="info">
                 <span class="centrize full-width">
                   <span class="vertical-center">
-                    <i class="icon fas fa-music"></i>
+                    <i class="icon fas fa-music" aria-hidden="true"></i>
                   </span>
                 </span>
               </span>
@@ -138,12 +138,12 @@
       <div class="box-col {{ .Params.category_slug }}">
         <div class="box-item">
           <div class="image">
-            <a href="{{ .Params.link }}" class="has-popup-link" target="_blank">
+            <a href="{{ .Params.link }}" class="has-popup-link" target="_blank" rel="noopener noreferrer">
               <img src="{{ .Params.image | absURL }}" alt="{{ .Title }}" />
               <span class="info">
                 <span class="centrize full-width">
                   <span class="vertical-center">
-                    <i class="icon fas fa-link"></i>
+                    <i class="icon fas fa-link" aria-hidden="true"></i>
                   </span>
                 </span>
               </span>
@@ -151,7 +151,7 @@
           </div>
           <div class="desc">
             <div class="category">{{ .Params.category }}</div>
-            <a href="{{ .Params.link }}" class="name has-popup-link" target="_blank">{{ .Title }}</a>
+            <a href="{{ .Params.link }}" class="name has-popup-link" target="_blank" rel="noopener noreferrer">{{ .Title }}</a>
           </div>
         </div>
       </div>
@@ -166,7 +166,7 @@
               <span class="info">
                 <span class="centrize full-width">
                   <span class="vertical-center">
-                    <i class="icon fas fa-plus"></i>
+                    <i class="icon fas fa-plus" aria-hidden="true"></i>
                   </span>
                 </span>
               </span>
@@ -188,9 +188,9 @@
                   {{ .Content }}
                 </div>
                 {{ if .Params.button_url }}
-                <a href="{{ .Params.button_url }}" class="btn" target="_blank">
+                <a href="{{ .Params.button_url }}" class="btn" target="_blank" rel="noopener noreferrer">
                   <span class="animated-button"><span>{{ i18n "viewProject" }}</span></span>
-                  <i class="icon fas fa-chevron-right"></i>
+                  <i class="icon fas fa-chevron-right" aria-hidden="true"></i>
                 </a>
                 {{ end }}
               </div>
@@ -205,7 +205,7 @@
 
     <div class="clear"></div>
   </div>
-</div>
+</section>
 
 {{ end }}
 {{ end }}

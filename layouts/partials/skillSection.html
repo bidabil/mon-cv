@@ -4,12 +4,12 @@
 
 {{ range .columns }}
 {{ "<!-- Section Design Skills -->" | safeHTML }}
-<div class="section skills" id="section-skills-{{ .slug }}">
+<section class="section skills" id="section-skills-{{ .slug }}">
   <div class="content">
 
     {{ "<!-- title -->" | safeHTML }}
     <div class="titles">
-      <div class="title">{{ .title }}</div>
+      <h2 class="title">{{ .title }}</h2>
       <div class="subtitle">{{ .subtitle }}</div>
     </div>
 
@@ -23,7 +23,7 @@
           <div class="single-post-text">
             <p>{{ .text | safeHTML }}</p>
           </div>
-					<div class="progress">
+					<div class="progress" role="progressbar" aria-valuenow="{{ .value }}" aria-valuemin="0" aria-valuemax="100" aria-label="{{ .label }}: {{ .value }}%">
 						<div class="percentage" style="width:{{ .value }}%;">
 							<span class="percent">{{ .value }}%</span>
 						</div>
@@ -39,7 +39,7 @@
           <div class="single-post-text">
             <p>{{ .text | safeHTML }}</p>
           </div>
-					<div class="progress">
+					<div class="progress" role="progressbar" aria-valuenow="{{ .value }}" aria-valuemin="0" aria-valuemax="100" aria-label="{{ .label }}: {{ .value }}%">
 						<div class="percentage" style="width: {{ .value }}%;">
 							<span class="percent">{{ .value }}%</span>
 						</div>
@@ -51,7 +51,7 @@
 				{{ if eq .type "circles" }}
 				{{ range .items }}
 				<li>
-					<div class="progress p{{ .value }}">
+					<div class="progress p{{ .value }}" role="progressbar" aria-valuenow="{{ .value }}" aria-valuemin="0" aria-valuemax="100" aria-label="{{ .label }}: {{ .value }}%">
 						<div class="percentage"></div>
 						<span>{{ .value }}%</span>
 					</div>
@@ -67,7 +67,7 @@
     </div>
 
   </div>
-</div>
+</section>
 {{ end }}
 
 {{ end }}

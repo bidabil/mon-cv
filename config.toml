@@ -108,7 +108,7 @@ weight = 2
 # Sidebar
 [params.sidebar]
 enable = 1
-search = 1
+search = 0
 latestPosts = 1
 categories = 1
 tags = 1

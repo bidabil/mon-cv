@@ -1,11 +1,11 @@
-<div class="section service" id="{{ .Get "id" }}"> 
-  <div class="content"> 
+<section class="section service" id="{{ .Get "id" }}">
+  <div class="content">
   <div class="titles">
-    <div class="title">{{ .Get "title" }}</div>
+    <h2 class="title">{{ .Get "title" }}</h2>
     <div class="subtitle">{{ .Get "subtitle" }}</div>
   </div>
   <div class="service-items">
     {{ .Inner }}
   </div>
 </div>
-</div>
+</section>

@@ -3,12 +3,12 @@
 {{ if .enable }}
 
 {{ "<!-- Section Service -->" | safeHTML }}
-<div class="section service" id="section-services">
+<section class="section service" id="section-services">
   <div class="content">
 
     {{ "<!-- title -->" | safeHTML }}
     <div class="titles">
-      <div class="title">{{ .title }}</div>
+      <h2 class="title">{{ .title }}</h2>
       <div class="subtitle">{{ .subtitle }}</div>
     </div>
 
@@ -17,7 +17,7 @@
       {{ range .items }}
       <div class="service-col">
         <div class="service-item">
-          <div class="icon"><i class="{{ .icon }}"></i></div>
+          <div class="icon"><i class="{{ .icon }}" aria-hidden="true"></i></div>
           <div class="name">{{ .name | safeHTML }}</div>
           <div class="single-post-text">
             <p>
@@ -31,7 +31,7 @@
 
     <div class="clear"></div>
   </div>
-</div>
+</section>
 
 {{ end }}
 {{ end }}

@@ -18,7 +18,7 @@
   {{ $cvURL := cond (eq $.Site.Language.Lang "en") ("files/Billel-Attafi-Senior-NET-Engineer-EN.pdf" | absURL) ("files/Billel-Attafi-Senior-NET-Engineer-FR.pdf" | absURL) }}
   <a href="{{ $cvURL }}" class="btn download-cv-btn" target="_blank" rel="noopener noreferrer" {{ if $header.button_download }} download{{ end }}>
     <span class="animated-button"><span>{{ i18n "downloadCV" }}</span></span>
-    <i class="icon {{ $header.button_icon }}"></i>
+    <i class="icon {{ $header.button_icon }}" aria-hidden="true"></i>
   </a>
 
   {{ "<!-- header sidebar -->" | safeHTML }}

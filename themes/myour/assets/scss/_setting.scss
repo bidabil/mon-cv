@@ -37,7 +37,7 @@ $extra_font: 'Mr Dafoe';
 
 /* Fonts Size */
 $logo_size: 18px;
-$title_size: 4.2vw;
+$title_size: clamp(22px, 4.2vw, 68px);
 $section_title_size: 55px;
 $large_size: 18px;
 $extra_large_size: 16px;

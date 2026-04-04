@@ -4,12 +4,12 @@
 {{ if .enable }}
 
 {{ "<!-- Section Contacts Info -->" | safeHTML }}
-<div class="section contacts" id="section-contacts">
+<section class="section contacts" id="section-contacts">
   <div class="content">
 
     {{ "<!-- title -->" | safeHTML }}
     <div class="titles">
-      <div class="title">{{ .title }}</div>
+      <h2 class="title">{{ .title }}</h2>
       <div class="subtitle">{{ .subtitle }}</div>
     </div>
 
@@ -60,7 +60,7 @@
 
     <div class="clear"></div>
   </div>
-</div>
+</section>
 
 {{ end }}
 {{ end }}

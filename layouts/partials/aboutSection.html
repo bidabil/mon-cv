@@ -3,12 +3,12 @@
 {{ if .enable }}
 
 {{ "<!-- Section About -->" | safeHTML }}
-<div class="section about" id="section-about">
+<section class="section about" id="section-about">
   <div class="content">
 
     {{ "<!-- title -->" | safeHTML }}
     <div class="titles">
-      <div class="title">{{ .title }}</div>
+      <h2 class="title">{{ .title }}</h2>
       <div class="subtitle">{{ .subtitle }}</div>
     </div>
 
@@ -47,7 +47,7 @@
 
     <div class="clear"></div>
   </div>
-</div>
+</section>
 
 {{ end }}
 {{ end }}

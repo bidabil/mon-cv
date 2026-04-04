@@ -3,12 +3,12 @@
 {{ if .enable }}
 
 {{ "<!-- Section Clients -->" | safeHTML }}
-<div class="section clients" id="section-clients">
+<section class="section clients" id="section-clients">
   <div class="content">
 
     {{ "<!-- title -->" | safeHTML }}
     <div class="titles">
-      <div class="title">{{ .title }}</div>
+      <h2 class="title">{{ .title }}</h2>
       <div class="subtitle">{{ .subtitle }}</div>
     </div>
 
@@ -18,7 +18,7 @@
         {{ range .items }}
         <div class="item">
           <div class="clients-item">
-            <a target="_blank" href="{{ .url }}">
+            <a target="_blank" href="{{ .url }}" rel="noopener noreferrer">
               <img src="{{ .image | absURL }}" alt="{{ .name | default "logo client" }}" loading="lazy" />
             </a>
           </div>
@@ -28,15 +28,15 @@
 
       {{ "<!-- navigation -->" | safeHTML }}
       <div class="navs">
-        <span class="prev fas fa-chevron-left"></span>
-        <span class="next fas fa-chevron-right"></span>
+        <span class="prev fas fa-chevron-left" role="button" tabindex="0" aria-label="Précédent"></span>
+        <span class="next fas fa-chevron-right" role="button" tabindex="0" aria-label="Suivant"></span>
       </div>
 
     </div>
 
     <div class="clear"></div>
   </div>
-</div>
+</section>
 
 {{ end }}
 {{ end }}
