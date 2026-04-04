@@ -80,5 +80,46 @@
   </div>
 </div>
 
+{{ if .projects }}
+{{ "<!-- Section Resume Projects -->" | safeHTML }}
+<div class="section resume" id="section-projects">
+  <div class="content">
+
+    {{ "<!-- title -->" | safeHTML }}
+    <div class="titles">
+      <div class="title">{{ .projects.title }}</div>
+      <div class="subtitle">{{ .projects.subtitle }}</div>
+    </div>
+
+    {{ "<!-- resume items -->" | safeHTML }}
+    <div class="content-carousel">
+      <div class="owl-carousel" data-slidesview="2" data-slidesview_mobile="1">
+        {{ range .projects.items }}
+        <div class="item">
+          <div class="resume-item active">
+            <div class="date">{{ .year }}</div>
+            <div class="name">{{ .name | safeHTML }}</div>
+            <div class="single-post-text">
+              <p>
+                {{ .text | safeHTML }}
+              </p>
+            </div>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+
+      {{ "<!-- navigation -->" | safeHTML }}
+      <div class="navs">
+        <span class="prev fas fa-chevron-left"></span>
+        <span class="next fas fa-chevron-right"></span>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+{{ end }}
+
 {{ end }}
 {{ end }}

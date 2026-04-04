@@ -134,6 +134,14 @@ resume:
         name: "Directeur Opérationnel / Chef de Projet / Full Stack <br />Hostaplast | Alger, Algérie"
         text: "Optimisation logistique nationale (4 000 points de vente) : −60% de coûts opérationnels. Développement d'une API géospatiale complète remplaçant Google Maps : −100% de coûts de licence. ERP complet .NET + SQL Server."
 
+  projects:
+    title: "Projet Portfolio"
+    subtitle: "Réalisation personnelle"
+    items:
+      - year: "Open Source"
+        name: "Secure Software Supply Chain Platform <br />CI/CD Production-Grade avec DevSecOps"
+        text: "Pipeline CI/CD complet intégrant les pratiques modernes de sécurité de la supply chain logicielle. SAST (Semgrep, CodeQL, Ruff), dependency scanning (pip-audit, Safety, OSV Scanner), container scanning (Trivy, Grype). Génération SBOM et attestation de provenance SLSA pour chaque build. Signature d'images Docker avec Cosign (keyless) et vérification automatique avant déploiement. Builds multi-architecture (linux/amd64, linux/arm64). Quality Gate automatisé : tests, coverage 75%+, lint strict (mypy strict mode). CD production avec validation staging, smoke tests et notification de rollback."
+
   education:
     title: "Formation"
     subtitle: "Parcours académique"

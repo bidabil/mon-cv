@@ -129,6 +129,14 @@ resume:
         name: "COO / Project Manager / Full Stack Developer <br />Hostaplast | Algiers, Algeria"
         text: "National logistics optimization across 4,000 sales points: −60% operational costs. Internal geospatial API replacing Google Maps entirely: −100% licensing costs. Full .NET + SQL Server ERP."
 
+  projects:
+    title: "Portfolio Project"
+    subtitle: "Personal project"
+    items:
+      - year: "Open Source"
+        name: "Secure Software Supply Chain Platform <br />Production-Grade CI/CD with DevSecOps"
+        text: "Complete CI/CD pipeline implementing modern software supply chain security practices. SAST (Semgrep, CodeQL, Ruff), dependency scanning (pip-audit, Safety, OSV Scanner), container scanning (Trivy, Grype). SBOM generation and provenance attestation (SLSA) for every build artifact. Docker image signing with Cosign (keyless) and automated signature verification before deployment. Multi-architecture builds (linux/amd64, linux/arm64) with GitHub Actions caching. Automated Quality Gate: tests, coverage 75%+, strict lint (mypy strict mode) and security results. Production CD with staging validation, smoke tests and rollback notification on failure."
+
   education:
     title: "Education"
     subtitle: "Academic background"
