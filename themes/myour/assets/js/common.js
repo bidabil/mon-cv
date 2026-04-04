@@ -243,26 +243,70 @@
 	});
 
 	/*
-		Menu on Mobile
+		Menu on Mobile — with focus trap
 	*/
-	$('header').on('click', '.menu-btn', function(){
-		var $btn = $(this);
-		if($('header').hasClass('active')){
-			$('header').removeClass('active');
-			$btn.attr('aria-expanded', 'false');
-			$('.footer .soc').fadeIn();
-			$('body').addClass('loaded');
-			if($('.video-bg').length) {
-				$('body').addClass('background-enabled');
-			}
-		} else {
-			$('header').addClass('active');
-			$btn.attr('aria-expanded', 'true');
-			$('.footer .soc').hide();
-			$('body').removeClass('loaded');
-			$('body').removeClass('background-enabled');
+	var focusTrapHandler = null;
+
+	function getFocusableElements(container) {
+		return Array.from(container.querySelectorAll(
+			'a[href], button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])'
+		));
+	}
+
+	function openMenu($btn) {
+		$('header').addClass('active');
+		$btn.attr('aria-expanded', 'true');
+		$('.footer .soc').hide();
+		$('body').removeClass('loaded').removeClass('background-enabled');
+
+		var focusable = getFocusableElements(document.querySelector('header'));
+		if (focusable.length) {
+			focusable[0].focus();
+			focusTrapHandler = function(e) {
+				if (e.key !== 'Tab') return;
+				var first = focusable[0];
+				var last = focusable[focusable.length - 1];
+				if (e.shiftKey && document.activeElement === first) {
+					e.preventDefault();
+					last.focus();
+				} else if (!e.shiftKey && document.activeElement === last) {
+					e.preventDefault();
+					first.focus();
+				}
+			};
+			document.addEventListener('keydown', focusTrapHandler);
 		}
 
+		document.addEventListener('keydown', function escHandler(e) {
+			if (e.key === 'Escape') {
+				closeMenu($btn);
+				document.removeEventListener('keydown', escHandler);
+			}
+		});
+	}
+
+	function closeMenu($btn) {
+		$('header').removeClass('active');
+		$btn.attr('aria-expanded', 'false');
+		$('.footer .soc').fadeIn();
+		$('body').addClass('loaded');
+		if ($('.video-bg').length) {
+			$('body').addClass('background-enabled');
+		}
+		if (focusTrapHandler) {
+			document.removeEventListener('keydown', focusTrapHandler);
+			focusTrapHandler = null;
+		}
+		$btn[0].focus();
+	}
+
+	$('header').on('click', '.menu-btn', function(){
+		var $btn = $(this);
+		if ($('header').hasClass('active')) {
+			closeMenu($btn);
+		} else {
+			openMenu($btn);
+		}
 		return false;
 	});
 

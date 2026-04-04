@@ -32,7 +32,6 @@ function handleSubmit(event) {
     headers: { 'Accept': 'application/json' }
   }).then(function(response) {
     if (response.ok) {
-      if (successMsg) successMsg.textContent = successMsg.textContent;
       status.style.display = 'block';
       form.reset();
     } else {

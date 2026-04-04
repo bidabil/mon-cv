@@ -1,5 +1,5 @@
 <head>
-  <title>{{ .Title }}</title>
+  <title>{{ .Title }}{{ if not .IsHome }} — {{ .Site.Title }}{{ end }}</title>
 
   {{ "<!-- Meta -->" | safeHTML }}
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -43,6 +43,7 @@
   <meta name="twitter:image" content="{{ "images/billel2.jpg" | absURL }}" />
 
   {{ "<!-- hreflang -->" | safeHTML }}
+  <link rel="alternate" hreflang="x-default" href="{{ .Site.BaseURL }}" />
   {{ range .AllTranslations }}
   <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" />
   {{ end }}
@@ -114,8 +115,9 @@
   <link rel="stylesheet" href="{{ "plugins/template-colors/" | absURL }}{{ . }}.css" />
   {{ end }}
 
-  {{ "<!-- Custom Animations -->" | safeHTML }}
-  <link rel="stylesheet" href="{{ "css/custom.css" | absURL }}" />
+  {{ "<!-- Custom Styles -->" | safeHTML }}
+  {{ $custom := resources.Get "css/custom.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $custom.Permalink }}" integrity="{{ $custom.Data.Integrity }}" crossorigin="anonymous" />
 
   {{ "<!-- Favicon -->" | safeHTML }}
   <link rel="shortcut icon" href="{{ "images/favicon/favicon.ico" | absURL }}" type="image/x-icon" />
@@ -123,6 +125,8 @@
 
   {{ with site.Params.googleAnalytics }}
   {{ "<!-- Google Analytics -->" | safeHTML }}
+  {{/* ATTENTION CSP : si GA est activé, ajouter 'unsafe-inline' à script-src dans .htaccess
+       ou migrer vers GTM (chargement externe uniquement, sans inline script). */}}
   <script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
