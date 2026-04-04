@@ -85,15 +85,6 @@ description = "Ingénieur logiciel senior basé à Marseille — 10+ ans d'expé
 [languages.en.params]
 description = "Senior software engineer based in Marseille — 10+ years of experience in .NET, Clean Architecture, PostgreSQL/PostGIS and DevSecOps. Available for freelance missions."
 
-[languages.en.params.header_en]
-logo_image = "images/logo.png"
-logo_text = "Billel <br />Attafi"
-logo_alt = "Billel Attafi"
-button_text = "Download CV"
-button_url = "files/Billel-Attafi-Senior-NET-Engineer-EN.pdf"
-button_icon = "fas fa-download"
-button_download = true
-
 # Header Settings
 [params.header]
 logo_image = "images/logo.png"
