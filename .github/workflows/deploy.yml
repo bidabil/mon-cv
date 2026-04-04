@@ -30,7 +30,7 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./public/
-          server-dir: htdocs/
+          server-dir: billelattafi.fr/htdocs/
         continue-on-error: true
 
       - name: Retry Deployment on Failure
@@ -41,4 +41,4 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./public/
-          server-dir: htdocs/
+          server-dir: billelattafi.fr/htdocs/
