@@ -90,8 +90,6 @@ description = "Senior software engineer based in Marseille — 10+ years of expe
 logo_image = "images/logo.png"
 logo_text = "Billel <br />Attafi"
 logo_alt = "Billel Attafi"
-button_text = "Télécharger CV"
-button_url = "files/Resume-Template.pdf"
 button_icon = "fas fa-download"
 button_download = true
 

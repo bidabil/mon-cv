@@ -24,6 +24,13 @@
 	- Animations
 */
 
+/* - CSS Custom Properties */
+:root {
+	--active-color: #{$active_color};
+	--default-bg: #{$default_bg};
+	--extra-bg: #{$extra_bg};
+}
+
 /* - Basic */
 html {
 	margin-right: 0!important;

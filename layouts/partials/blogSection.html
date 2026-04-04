@@ -31,7 +31,7 @@
 		<div class="archive-item">
 			<div class="image">
 				<a href="{{ .Permalink }}">
-					<img src="{{ .Params.featureImage | absURL }}" alt="{{ .Title }}" />
+					<img src="{{ .Params.featureImage | absURL }}" alt="{{ .Title }}" loading="lazy" />
 				</a>
 			</div>
 			<div class="desc">

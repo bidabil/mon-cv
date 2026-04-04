@@ -1,37 +1,53 @@
 var form = document.getElementById("cform");
 
-async function handleSubmit(event) {
+function handleSubmit(event) {
   event.preventDefault();
+
+  if (!form.checkValidity()) {
+    form.reportValidity();
+    return;
+  }
+
   var status = document.getElementById("formAlertSuccess");
-  var data = new FormData(event.target);
-  fetch(event.target.action, {
+  var submitBtn = form.querySelector('button[type="submit"]');
+  var btnLabel = submitBtn ? submitBtn.querySelector('.animated-button span') : null;
+  var originalLabel = btnLabel ? btnLabel.textContent : null;
+
+  if (submitBtn) {
+    submitBtn.disabled = true;
+    if (btnLabel) btnLabel.textContent = "…";
+  }
+
+  var data = new FormData(form);
+  fetch(form.action, {
     method: form.method,
     body: data,
-    headers: {
-        'Accept': 'application/json'
-    }
-  }).then(response => {
+    headers: { 'Accept': 'application/json' }
+  }).then(function(response) {
     if (response.ok) {
-      status.textContent = "Thanks for your submission!";
       status.style.display = 'block';
-      form.reset()
+      form.reset();
     } else {
-      response.json().then(data => {
-        if (Object.hasOwn(data, 'errors')) {
-          status.textContent = data["errors"].map(error => error["message"]).join(", ");
-          status.style.display = 'block';
+      return response.json().then(function(payload) {
+        if (Object.hasOwn(payload, 'errors')) {
+          status.textContent = payload["errors"].map(function(e) { return e["message"]; }).join(", ");
         } else {
           status.textContent = "Oops! There was a problem submitting your form";
-          status.style.display = 'block';
         }
-      })
+        status.style.display = 'block';
+      });
     }
-  }).catch(error => {
+  }).catch(function() {
     status.textContent = "Oops! There was a problem submitting your form";
     status.style.display = 'block';
+  }).finally(function() {
+    if (submitBtn) {
+      submitBtn.disabled = false;
+      if (btnLabel && originalLabel) btnLabel.textContent = originalLabel;
+    }
   });
 }
 
-if ( form != undefined ) {
+if (form != null) {
   form.addEventListener("submit", handleSubmit);
 }

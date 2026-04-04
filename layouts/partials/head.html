@@ -12,7 +12,7 @@
   {{ if .Params.noindex }}<meta name="robots" content="noindex, nofollow">{{ else }}<meta name="robots" content="index, follow">{{ end }}
 
   {{ "<!-- Description & Keywords -->" | safeHTML }}
-  {{ $desc := .Site.Params.description }}
+  {{ $desc := cond (ne .Params.description "") .Params.description .Site.Params.description }}
   {{ if $desc }}<meta name="description" content="{{ $desc }}">{{ end }}
   {{ if eq .Site.Language.Lang "en" }}
   <meta name="keywords" content="Senior .NET Engineer, Backend Developer, C#, Clean Architecture, PostgreSQL, PostGIS, DevSecOps, Microservices, Docker, Azure DevOps, Freelance, Marseille, France">
@@ -33,9 +33,11 @@
   <meta property="og:image:width" content="820" />
   <meta property="og:image:height" content="1080" />
   <meta property="og:image:type" content="image/jpeg" />
-  <meta property="og:locale" content="{{ .Site.Language.Lang }}" />
+  {{ $ogLocale := cond (eq .Site.Language.Lang "en") "en_US" "fr_FR" }}
+  <meta property="og:locale" content="{{ $ogLocale }}" />
   {{ range .AllTranslations }}{{ if ne .Language.Lang $.Site.Language.Lang }}
-  <meta property="og:locale:alternate" content="{{ .Language.Lang }}" />
+  {{ $altLocale := cond (eq .Language.Lang "en") "en_US" "fr_FR" }}
+  <meta property="og:locale:alternate" content="{{ $altLocale }}" />
   {{ end }}{{ end }}
 
   {{ "<!-- Twitter Card -->" | safeHTML }}
@@ -97,12 +99,11 @@
   {{ "<!-- Google Fonts Preconnect -->" | safeHTML }}
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Mr+Dafoe&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;1,400&family=Mr+Dafoe&display=swap" rel="stylesheet">
 
   {{ "<!-- Main Stylesheets -->" | safeHTML }}
-  {{ $style := resources.Get "scss/style.scss" | css.Sass | minify }}
-  <link rel="stylesheet" href="{{ $style.Permalink }}" />
+  {{ $style := resources.Get "scss/style.scss" | css.Sass | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}" crossorigin="anonymous" />
 
   {{ "<!-- Plugins Stylesheets -->" | safeHTML }}
   <link rel="stylesheet" href="{{ "plugins/magnific-popup/magnific-popup.css" | absURL }}" />
@@ -118,7 +119,7 @@
   {{ end }}
 
   {{ "<!-- Custom Animations -->" | safeHTML }}
-  <link rel="stylesheet" href="{{ "css/custom.css" | absURL }}?v={{ now.Unix }}" />
+  <link rel="stylesheet" href="{{ "css/custom.css" | absURL }}" />
 
   {{ "<!-- Favicon -->" | safeHTML }}
   <link rel="shortcut icon" href="{{ "images/favicon/favicon.ico" | absURL }}" type="image/x-icon" />

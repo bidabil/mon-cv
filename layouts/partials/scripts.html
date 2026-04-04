@@ -1,26 +1,25 @@
-<script src="{{ "plugins/jQuery/jquery.min.js" | absURL }}"></script>
-<script src="{{ "plugins/velocity/velocity.min.js" | absURL }}"></script>
-<script src="{{ "plugins/validate/jquery.validate.min.js" | absURL }}"></script>
-<script src="{{ "plugins/swiper/swiper.min.js" | absURL }}"></script>
-<script src="{{ "plugins/magnific-popup/magnific-popup.min.js" | absURL }}"></script>
-<script src="{{ "plugins/typed/typed.js" | absURL }}"></script>
-<script src="{{ "plugins/imagesloaded/imagesloaded.pkgd.min.js" | absURL }}"></script>
-<script src="{{ "plugins/isotope/isotope.pkgd.js" | absURL }}"></script>
-<script src="{{ "plugins/jarallax/jarallax.js" | absURL }}"></script>
-<script src="{{ "plugins/jarallax/jarallax-video.js" | absURL }}"></script>
-<script src="{{ "plugins/jarallax/jarallax-element.js" | absURL }}"></script>
-<script src="{{ "plugins/owl-carousel/owl.carousel.js" | absURL }}"></script>
-<script src="{{ "plugins/rrssb/rrssb.js" | absURL }}"></script>
+<script src="{{ "plugins/jQuery/jquery.min.js" | absURL }}" defer></script>
+<script src="{{ "plugins/velocity/velocity.min.js" | absURL }}" defer></script>
+<script src="{{ "plugins/validate/jquery.validate.min.js" | absURL }}" defer></script>
+<script src="{{ "plugins/swiper/swiper.min.js" | absURL }}" defer></script>
+<script src="{{ "plugins/magnific-popup/magnific-popup.min.js" | absURL }}" defer></script>
+<script src="{{ "plugins/typed/typed.js" | absURL }}" defer></script>
+<script src="{{ "plugins/imagesloaded/imagesloaded.pkgd.min.js" | absURL }}" defer></script>
+<script src="{{ "plugins/isotope/isotope.pkgd.js" | absURL }}" defer></script>
+<script src="{{ "plugins/jarallax/jarallax.js" | absURL }}" defer></script>
+<script src="{{ "plugins/jarallax/jarallax-video.js" | absURL }}" defer></script>
+<script src="{{ "plugins/jarallax/jarallax-element.js" | absURL }}" defer></script>
+<script src="{{ "plugins/owl-carousel/owl.carousel.js" | absURL }}" defer></script>
+<script src="{{ "plugins/rrssb/rrssb.js" | absURL }}" defer></script>
 
 {{ if .Site.Params.sidebar.search }}
-<script src="{{ "plugins/mark/mark.js" | absURL }}"></script>
-<script src="{{ "plugins/fuse/fuse.js" | absURL }}"></script>
-<script src="{{ "plugins/search/simple-search.js" | absURL }}"></script>
+<script src="{{ "plugins/mark/mark.js" | absURL }}" defer></script>
+<script src="{{ "plugins/fuse/fuse.js" | absURL }}" defer></script>
+<script src="{{ "plugins/search/simple-search.js" | absURL }}" defer></script>
 {{ end }}
 
-{{ $formhandler := resources.Get "js/form-handler.js" | minify }}
-<script src="{{ $formhandler.Permalink }}"></script>
+{{ $formhandler := resources.Get "js/form-handler.js" | minify | fingerprint }}
+<script src="{{ $formhandler.Permalink }}" integrity="{{ $formhandler.Data.Integrity }}" crossorigin="anonymous" defer></script>
 
-{{ $script := resources.Get "js/common.js" | minify }}
-<script src="{{ $script.Permalink }}"></script>
-
+{{ $script := resources.Get "js/common.js" | minify | fingerprint }}
+<script src="{{ $script.Permalink }}" integrity="{{ $script.Data.Integrity }}" crossorigin="anonymous" defer></script>

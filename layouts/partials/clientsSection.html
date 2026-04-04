@@ -19,7 +19,7 @@
         <div class="item">
           <div class="clients-item">
             <a target="_blank" href="{{ .url }}">
-              <img src="{{ .image | absURL }}" alt="client logo" />
+              <img src="{{ .image | absURL }}" alt="{{ .name | default "logo client" }}" loading="lazy" />
             </a>
           </div>
         </div>

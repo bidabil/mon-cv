@@ -12,7 +12,7 @@
   </div>
 
   {{ "<!-- menu button -->" | safeHTML }}
-  <a href="#" class="menu-btn"><span></span></a>
+  <button type="button" class="menu-btn" aria-label="{{ i18n "openMenu" | default "Ouvrir le menu" }}" aria-expanded="false"><span></span></button>
 
   {{ "<!-- download cv button -->" | safeHTML }}
   {{ $cvURL := cond (eq $.Site.Language.Lang "en") ("files/Billel-Attafi-Senior-NET-Engineer-EN.pdf" | absURL) ("files/Billel-Attafi-Senior-NET-Engineer-FR.pdf" | absURL) }}
@@ -25,7 +25,7 @@
   <div class="header-sidebar">
 
     {{ "<!-- top menu -->" | safeHTML }}
-    <div class="top-menu">
+    <nav class="top-menu" aria-label="{{ i18n "mainNavigation" | default "Navigation principale" }}">
       <div class="top-menu-nav">
         <div class="menu-topmenu-container">
           <ul class="menu">
@@ -64,7 +64,7 @@
           </ul>
         </div>
       </div>
-    </div>
+    </nav>
 
   </div>
 

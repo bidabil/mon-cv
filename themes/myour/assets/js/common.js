@@ -8,7 +8,7 @@
 ( function( $ ) {
 	'use strict';
 
-	window.onpageshow = function(event) {if (event.persisted) {window.location.reload() }};
+	window.addEventListener('pageshow', function(event) { if (event.persisted) { window.location.reload(); } });
 
 	$(window).on("load", function() {
 
@@ -159,11 +159,11 @@
 	/*
 		Button Hover
 	*/
-	$('.animated-button span').each(function (index) {
+	$('.animated-button span').each(function () {
 		var characters = $(this).text().split("");
 		var label = $(this);
 		label.empty();
-		$.each(characters, function (i, el) {
+		$.each(characters, function (_i, el) {
 			label.append("<em>" + el + "</em>");
 		});
 	});
@@ -351,7 +351,7 @@
 		fixedContentPos: false,
 		mainClass: 'mfp-fade',
 		callbacks: {
-			markupParse: function(template, values, item) {
+			markupParse: function(template) {
 				template.find('iframe').attr('allow', 'autoplay');
 			}
 		}
@@ -422,9 +422,12 @@
 	}
 
 	/*
-		Resize
+		Resize (debounced)
 	*/
+	var resizeTimer;
 	$(window).resize(function() {
+		clearTimeout(resizeTimer);
+		resizeTimer = setTimeout(function() {
 
 		/* Set full height in blocks */
 		var width = $(window).width();
@@ -442,6 +445,7 @@
 			skills_dotted.find('.percentage .da').css({'width':skills_dotted_w+1});
 		}
 
+		}, 150);
 	});
 
 	/*
@@ -462,7 +466,7 @@
 		},
 		success: 'valid',
 		submitHandler: function() {
-			return true;
+			return false;
 		}
 	});
 
@@ -499,7 +503,7 @@
 		Search
 	*/
 	if ( $('#search-input').length ) {
-		var sjs = SimpleJekyllSearch({
+		SimpleJekyllSearch({
 		  searchInput: document.getElementById('search-input'),
 		  resultsContainer: document.getElementById('results-container'),
 		  json: '/search.json'

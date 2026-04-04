@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.Language }}">
+<html lang="{{ .Site.Language.Lang }}">
 
   {{ partial "head.html" . }}
 
   <body class="{{ if or .IsHome .Params.home }} home{{ end }}{{ if .IsPage }}{{ if or ( eq .Type "blog" ) ( eq .Type "page" ) }}{{ if .Params.home }}{{ else }} post{{ end }}{{ end }}{{ end }}{{ if or .IsSection ( eq .Kind "term" ) }} blog{{ end }}{{ if eq .Kind "404"  }} post{{ end }}">
+
+    {{ "<!-- Skip navigation -->" | safeHTML }}
+    <a class="skip-to-content" href="#main-content">{{ i18n "skipToContent" | default "Aller au contenu" }}</a>
 
     {{ partial "preloader.html" . }}
 
@@ -12,9 +15,9 @@
       {{ partial "header.html" . }}
 
       {{ "<!-- Wrapper -->" | safeHTML }}
-      <div class="wrapper">
+      <main id="main-content" class="wrapper">
         {{ block "main" . }}{{ end }}
-      </div>
+      </main>
 
       {{ partial "footer.html" . }}
     </div>
