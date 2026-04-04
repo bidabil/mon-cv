@@ -44,22 +44,28 @@ about:
   subtitle: "My profile"
   text: "<p>Senior software engineer with 10+ years of experience designing high-performance backend systems, distributed architectures, and geospatial solutions. Expert in .NET, PostgreSQL/PostGIS and Clean Architecture — known for building scalable, production-grade systems for major accounts (APRR, CMA CGM, ArcelorMittal).</p><p>I also support organizations with high confidentiality requirements in modernizing their information systems: data security, regulatory compliance, and IT infrastructure optimization.</p>"
   list:
-    - label: "Location"
+    - icon: "fas fa-map-marker-alt"
+      label: "Location"
       value: "Marseille, France"
 
-    - label: "Availability"
+    - icon: "fas fa-calendar-check"
+      label: "Availability"
       value: "Immediate — Full remote, anywhere in France"
 
-    - label: "Billing"
+    - icon: "fas fa-file-invoice"
+      label: "Billing"
       value: "Umbrella company · Occasional on-site travel possible"
 
-    - label: "Phone"
+    - icon: "fas fa-phone"
+      label: "Phone"
       value: "+33 7 48 24 41 37"
 
-    - label: "Email"
+    - icon: "fas fa-envelope"
+      label: "Email"
       value: "contact@billelattafi.fr"
 
-    - label: "LinkedIn"
+    - icon: "fab fa-linkedin"
+      label: "LinkedIn"
       value: "linkedin.com/in/billelattafi"
 
 ### Services
