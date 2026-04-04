@@ -79,6 +79,29 @@ formspreeURL = "https://formspree.io/f/xwvwwejv"
 googleAnalytics = ""
 googleSiteVerification = "UOOkszk6Pdzb7uRI-kEZkRRaNYcBUMxkEKtIubJgVcM"
 
+# Person / Schema.org — single source of truth
+[params.person]
+fullName       = "Billel Abdelrezak ATTAFI"
+givenName      = "Billel"
+familyName     = "Attafi"
+email          = "contact@billelattafi.fr"
+telephone      = "+33748244137"
+linkedin       = "https://linkedin.com/in/billelattafi"
+github         = "https://github.com/bidabil"
+
+[params.person.address]
+locality       = "Marseille"
+region         = "Provence-Alpes-Côte d'Azur"
+country        = "FR"
+countryName    = "France"
+
+# OG Image — single source of truth
+[params.ogImage]
+src    = "images/billel2.jpg"
+width  = "820"
+height = "1080"
+type   = "image/jpeg"
+
 [languages.fr.params]
 description = "Ingénieur logiciel senior basé à Marseille — 10+ ans d'expérience en .NET, Clean Architecture, PostgreSQL/PostGIS et DevSecOps. Disponible pour missions freelance."
 

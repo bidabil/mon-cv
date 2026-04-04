@@ -18,15 +18,16 @@
   <link rel="canonical" href="{{ .Permalink }}" />
 
   {{ "<!-- Open Graph -->" | safeHTML }}
+  {{ $ogImg := .Site.Params.ogImage }}
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="{{ .Site.Title }}" />
   <meta property="og:title" content="{{ .Title }}" />
   {{ if $desc }}<meta property="og:description" content="{{ $desc }}" />{{ end }}
   <meta property="og:url" content="{{ .Permalink }}" />
-  <meta property="og:image" content="{{ "images/billel2.jpg" | absURL }}" />
-  <meta property="og:image:width" content="820" />
-  <meta property="og:image:height" content="1080" />
-  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image" content="{{ $ogImg.src | absURL }}" />
+  <meta property="og:image:width" content="{{ $ogImg.width }}" />
+  <meta property="og:image:height" content="{{ $ogImg.height }}" />
+  <meta property="og:image:type" content="{{ $ogImg.type }}" />
   {{ $ogLocale := cond (eq .Site.Language.Lang "en") "en_US" "fr_FR" }}
   <meta property="og:locale" content="{{ $ogLocale }}" />
   {{ range .AllTranslations }}{{ if ne .Language.Lang $.Site.Language.Lang }}
@@ -38,7 +39,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="{{ .Title }}" />
   {{ if $desc }}<meta name="twitter:description" content="{{ $desc }}" />{{ end }}
-  <meta name="twitter:image" content="{{ "images/billel2.jpg" | absURL }}" />
+  <meta name="twitter:image" content="{{ $ogImg.src | absURL }}" />
 
   {{ "<!-- hreflang -->" | safeHTML }}
   <link rel="alternate" hreflang="x-default" href="{{ .Site.BaseURL }}" />
@@ -47,32 +48,33 @@
   {{ end }}
 
   {{ "<!-- JSON-LD Person Schema -->" | safeHTML }}
+  {{ $p := .Site.Params.person }}
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": "Billel Abdelrezak ATTAFI",
-    "givenName": "Billel",
-    "familyName": "Attafi",
+    "name": "{{ $p.fullName }}",
+    "givenName": "{{ $p.givenName }}",
+    "familyName": "{{ $p.familyName }}",
     "jobTitle": {{ if eq .Site.Language.Lang "en" }}"Senior Software Engineer | Backend & Platform .NET"{{ else }}"Ingénieur Logiciel Senior | Backend & Platform .NET"{{ end }},
     "description": {{ if eq .Site.Language.Lang "en" }}"Senior software engineer with 10+ years of experience building high-performance backend systems, distributed architectures and geospatial solutions in .NET."{{ else }}"Ingénieur logiciel senior avec 10+ ans d'expérience dans la conception de systèmes backend haute performance et d'architectures distribuées en .NET."{{ end }},
     "url": "{{ .Site.BaseURL }}",
-    "email": "contact@billelattafi.fr",
-    "telephone": "+33748244137",
-    "image": "{{ "images/billel2.jpg" | absURL }}",
+    "email": "{{ $p.email }}",
+    "telephone": "{{ $p.telephone }}",
+    "image": "{{ $ogImg.src | absURL }}",
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Marseille",
-      "addressRegion": "Provence-Alpes-Côte d'Azur",
-      "addressCountry": "FR"
+      "addressLocality": "{{ $p.address.locality }}",
+      "addressRegion": "{{ $p.address.region }}",
+      "addressCountry": "{{ $p.address.country }}"
     },
     "nationality": {
       "@type": "Country",
-      "name": "France"
+      "name": "{{ $p.address.countryName }}"
     },
     "sameAs": [
-      "https://linkedin.com/in/billelattafi",
-      "https://github.com/bidabil"
+      "{{ $p.linkedin }}",
+      "{{ $p.github }}"
     ],
     "knowsAbout": [".NET", "C#", "ASP.NET Core", "Clean Architecture", "Domain-Driven Design", "PostgreSQL", "PostGIS", "DevSecOps", "RabbitMQ", "Microservices", "Docker", "Azure DevOps", "CI/CD"],
     "hasOccupation": {
@@ -80,7 +82,7 @@
       "name": {{ if eq .Site.Language.Lang "en" }}"Software Engineer"{{ else }}"Ingénieur Logiciel"{{ end }},
       "occupationLocation": {
         "@type": "City",
-        "name": "Marseille"
+        "name": "{{ $p.address.locality }}"
       },
       "skills": ".NET, C#, Clean Architecture, PostgreSQL, PostGIS, DevSecOps, Microservices"
     },
