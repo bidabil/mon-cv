@@ -85,7 +85,7 @@ description = "Ingénieur logiciel senior basé à Marseille — 10+ ans d'expé
 [languages.en.params]
 description = "Senior software engineer based in Marseille — 10+ years of experience in .NET, Clean Architecture, PostgreSQL/PostGIS and DevSecOps. Available for freelance missions."
 
-[languages.en.params.header]
+[languages.en.params.header_en]
 logo_image = "images/logo.png"
 logo_text = "Billel <br />Attafi"
 logo_alt = "Billel Attafi"
