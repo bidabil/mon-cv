@@ -115,9 +115,6 @@
   font-size: 14px !important;
   line-height: 1.7;
   color: rgba(255,255,255,0.7);
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
 }
 
 /* Hover : scale + bounce — désactivé si prefers-reduced-motion */

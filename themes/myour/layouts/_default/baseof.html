@@ -6,7 +6,7 @@
   <body class="{{ if or .IsHome .Params.home }} home{{ end }}{{ if .IsPage }}{{ if or ( eq .Type "blog" ) ( eq .Type "page" ) }}{{ if .Params.home }}{{ else }} post{{ end }}{{ end }}{{ end }}{{ if or .IsSection ( eq .Kind "term" ) }} blog{{ end }}{{ if eq .Kind "404"  }} post{{ end }}">
 
     {{ "<!-- Skip navigation -->" | safeHTML }}
-    <a class="skip-to-content" href="#main-content">{{ i18n "skipToContent" | default "Aller au contenu" }}</a>
+    <a class="skip-to-content" href="#main-content">{{ i18n "skipToContent" }}</a>
 
     {{ partial "preloader.html" . }}
 

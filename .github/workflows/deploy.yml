@@ -32,7 +32,6 @@ jobs:
           protocol: ftps
           local-dir: ./public/
           server-dir: billelattafi.fr/htdocs/
-        continue-on-error: true
 
       - name: Retry Deployment on Failure
         if: ${{ failure() }}

@@ -1,6 +1,18 @@
 [downloadCV]
 other = "Télécharger CV"
 
+[skipToContent]
+other = "Aller au contenu principal"
+
+[openMenu]
+other = "Ouvrir le menu"
+
+[mainNavigation]
+other = "Navigation principale"
+
+[required]
+other = "obligatoire"
+
 [home]
 other = "Accueil"
 

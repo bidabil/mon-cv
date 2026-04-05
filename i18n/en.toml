@@ -1,6 +1,18 @@
 [downloadCV]
 other = "Download Resume"
 
+[skipToContent]
+other = "Skip to main content"
+
+[openMenu]
+other = "Open menu"
+
+[mainNavigation]
+other = "Main navigation"
+
+[required]
+other = "required"
+
 [home]
 other = "Home"
 
