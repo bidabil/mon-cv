@@ -26,6 +26,7 @@
 
     {{ "<!-- top menu -->" | safeHTML }}
     <nav class="top-menu" aria-label="{{ i18n "mainNavigation" }}">
+
       <div class="top-menu-nav">
         <div class="menu-topmenu-container">
           <ul class="menu">
@@ -60,6 +61,14 @@
               </li>
               {{ end }}
             {{ end }}
+
+            {{ "<!-- download cv — mobile only menu item -->" | safeHTML }}
+            <li class="menu-item menu-item-cv-download">
+              <a href="{{ $cvURL }}" target="_blank" rel="noopener noreferrer" {{ if $header.button_download }} download{{ end }}>
+                <span class="animated-button"><span>{{ i18n "downloadCV" }}</span></span>
+                <i class="icon {{ $header.button_icon }}" aria-hidden="true"></i>
+              </a>
+            </li>
 
           </ul>
         </div>

@@ -353,6 +353,39 @@
 }
 
 /* ============================================
+   Mobile sidebar — download CV menu item
+   ============================================ */
+
+/* Hidden on desktop: the header bar button handles it there */
+.header .top-menu-nav .menu-item-cv-download {
+  display: none !important;
+}
+
+@media (max-width: 1199px) {
+  /* Show as a native menu item on mobile */
+  .header .top-menu-nav .menu-item-cv-download {
+    display: block !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    margin-top: 8px;
+    padding-top: 8px;
+  }
+
+  /* Accent color for text + icon to distinguish from nav links */
+  .header .top-menu-nav .menu-item-cv-download > a {
+    color: var(--active-color, #68e0cf) !important;
+  }
+
+  .header .top-menu-nav .menu-item-cv-download > a .animated-button span {
+    color: var(--active-color, #68e0cf);
+    text-shadow: 0 16px 0 #fff;
+  }
+
+  .header .top-menu-nav .menu-item-cv-download > a .icon {
+    color: var(--active-color, #68e0cf);
+  }
+}
+
+/* ============================================
    Contact section — hide success message by default
    ============================================ */
 
