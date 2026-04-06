@@ -5,6 +5,9 @@ on:
     branches: [ main, master ]
   workflow_dispatch:
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -24,6 +27,8 @@ jobs:
         run: hugo --minify --gc
 
       - name: Deploy via FTPS
+        id: deploy
+        continue-on-error: true
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
@@ -33,8 +38,8 @@ jobs:
           local-dir: ./public/
           server-dir: billelattafi.fr/htdocs/
 
-      - name: Retry Deployment on Failure
-        if: ${{ failure() }}
+      - name: Retry Deploy via FTPS
+        if: steps.deploy.outcome == 'failure'
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
